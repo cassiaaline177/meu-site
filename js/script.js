@@ -65,26 +65,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-<script>
-const imagens = document.querySelectorAll('.galeria img');
-const modal = document.getElementById('modal');
-const imgExpandida = document.getElementById('imgExpandida');
-const fechar = document.getElementById('fechar');
-
-imagens.forEach(img => {
-  img.addEventListener('click', () => {
-    modal.style.display = 'block';
-    imgExpandida.src = img.src;
-  });
-});
-
-fechar.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-  }
-});
-</script>
