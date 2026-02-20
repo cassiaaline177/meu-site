@@ -15,18 +15,28 @@
 <header class="header">
   <div class="nav-container">
 
-    <img src="img/logo.png.png" class="logo" alt="Vale Trip Jari">
+    <a href="index.html" class="logo-container">
+      <img src="img/logo.png.png" class="logo" alt="Vale Trip Jari">
+    </a>
 
     <nav id="menu">
       <a href="index.html">Início</a>
       <a href="index.html#sobre">Sobre</a>
-      <a href="index.html#galeria">Galeria</a>
-      <a href="#contato">Contato</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="contato.html" style="color: var(--verde);">Contato</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Menu">
-      ☰
-    </button>
+    <div class="header-right">
+      <svg class="compass-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" stroke="white" stroke-width="4" fill="rgba(255,255,255,0.1)"/>
+        <path d="M50 10 L50 20 M50 80 L50 90 M10 50 L20 50 M80 50 L90 50" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <polygon class="compass-needle" points="50,25 62,50 50,75 38,50" fill="#e66012"/>
+        <circle cx="50" cy="50" r="4" fill="white"/>
+      </svg>
+      <button class="menu-toggle" aria-label="Menu">
+        ☰
+      </button>
+    </div>
 
   </div>
 </header>
@@ -39,10 +49,39 @@
     <h2>Fale Conosco</h2>
     <p>Tem dúvidas? Entre em contato conosco via WhatsApp, telefone ou venha nos visitar!</p>
 
+    <!-- FORMULÁRIO DE CONTATO -->
+    <div class="form-container">
+      <h3>Envie uma mensagem por e-mail</h3>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Seu melhor email">
+        </div>
+        <div class="form-group">
+          <label for="assunto">Assunto</label>
+          <input type="text" id="assunto" name="assunto" required placeholder="Sobre o que quer falar?">
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+        </div>
+        <button type="submit" class="btn">Enviar Mensagem</button>
+      </form>
+    </div>
+
     <div class="contato-grid">
       <div class="contato-info">
         <h3>📍 Localização</h3>
         <p>Laranjal do Jari - AP<br>Vale do Jari, Brasil</p>
+      </div>
+
+      <div class="contato-info">
+        <h3>✉️ Email</h3>
+        <p><a href="mailto:valetripjari@gmail.com">valetripjari@gmail.com</a></p>
       </div>
 
       <div class="contato-info">
@@ -60,17 +99,6 @@
 
     <div class="contato-cta">
       <a href="https://wa.me/5596991152676" class="btn" target="_blank">💬 Enviar Mensagem via WhatsApp</a>
-    </div>
-
-    <div style="margin-top: 60px; padding: 40px; background: white; border-radius: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);">
-      <h3 style="color: var(--azul); margin-bottom: 15px;">Por que escolher a Vale Trip Jari?</h3>
-      <ul style="text-align: left; max-width: 600px; margin: 0 auto; list-style: none;">
-        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">✅ Guias locais experientes</li>
-        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">✅ Segurança em primeiro lugar</li>
-        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">✅ Experiências autênticas</li>
-        <li style="padding: 10px 0; border-bottom: 1px solid #eee;">✅ Preços competitivos</li>
-        <li style="padding: 10px 0;">✅ Atendimento personalizado</li>
-      </ul>
     </div>
   </div>
 </section>
@@ -106,7 +134,7 @@
       <h4>Links rápidos</h4>
       <a href="index.html">Início</a>
       <a href="index.html#sobre">Sobre</a>
-      <a href="index.html#galeria">Galeria</a>
+      <a href="galeria.html">Galeria</a>
       <a href="contato.html">Contato</a>
     </div>
 

@@ -6,6 +6,7 @@
   <title>Vale Trip Jari</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -15,18 +16,28 @@
 <header class="header">
   <div class="nav-container">
 
-    <img src="img/logo.png.png" class="logo" alt="Vale Trip Jari">
+    <a href="index.html" class="logo-container">
+      <img src="img/logo.png.png" class="logo" alt="Vale Trip Jari">
+    </a>
 
     <nav id="menu">
       <a href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#contato">Contato</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="contato.html">Contato</a>
     </nav>
 
-    <button class="menu-toggle" aria-label="Menu">
-      ☰
-    </button>
+    <div class="header-right">
+      <svg class="compass-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" stroke="white" stroke-width="4" fill="rgba(255,255,255,0.1)"/>
+        <path d="M50 10 L50 20 M50 80 L50 90 M10 50 L20 50 M80 50 L90 50" stroke="white" stroke-width="4" stroke-linecap="round"/>
+        <polygon class="compass-needle" points="50,25 62,50 50,75 38,50" fill="#e66012"/>
+        <circle cx="50" cy="50" r="4" fill="white"/>
+      </svg>
+      <button class="menu-toggle" aria-label="Menu">
+        ☰
+      </button>
+    </div>
 
   </div>
 </header>
@@ -38,7 +49,7 @@
   <div class="hero-content">
     <h1>Sua próxima aventura começa aqui</h1>
     <p>Expolore o melhor do Vale do Jari com roteiros guiados, experiências inesquecíveis e segurança.</p>
-    <a href="#destinos" class="btn">Ver roteiros</a>
+    <a href="roteiros.html" class="btn">Ver roteiros</a>
   </div>
 </section>
 
@@ -68,200 +79,31 @@
   </div>
 </section>
 
-<!-- ROTEIROS PRINCIPAIS -->
+<!-- ROTEIROS (PREVIEW) -->
 <section class="roteiros-section" id="destinos">
   <h2>Nossas Rotas e Aventuras</h2>
-  <p class="secao-descricao">Explore o Vale do Jari com nossos roteiros exclusivos</p>
-
-  <!-- CACHOEIRA DE SANTO ANTÔNIO -->
-  <div class="roteiro-card">
-    <div class="roteiro-header">
-      <h3>💧 Rota da Cachoeira</h3>
-      <span class="badge-roteiro">Contemplação & Cultura</span>
-    </div>
-    
-    <div class="roteiro-conteudo">
-      <p class="roteiro-descricao">
-        Imersão na história e cultura regional com experiência completa nas cachoeiras mais belas do Vale do Jari.
-        Foco em contemplação, história local e banhos revigorantes em águas cristalinas.
-      </p>
-      
-      <div class="roteiro-destaque">
-        <h4>🎯 Destino Principal</h4>
-        <p><strong>Cachoeira de Santo Antônio</strong> - Quedas de até 15 metros com cenários únicos</p>
-      </div>
-
-      <div class="roteiro-info-grid">
-        <div class="info-roteiro">
-          <strong>💰 Investimento</strong>
-          <p>A partir de R$ 189,00</p>
-          <span class="por-pessoa">por pessoa</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>⏱️ Duração</strong>
-          <p>Dia completo</p>
-          <span class="por-pessoa">7-8 horas</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>📅 Saídas</strong>
-          <p>Programadas</p>
-          <span class="por-pessoa">Domingos (vagas limitadas)</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>👥 Grupo</strong>
-          <p>Máximo 15 pessoas</p>
-          <span class="por-pessoa">para exclusividade</span>
-        </div>
-      </div>
-
-      <div class="roteiro-conteudo-detalhado">
-        <h4>✓ O que está incluído:</h4>
-        <ul class="lista-inclusos">
-          <li>Transporte local ida e volta</li>
-          <li>Visita à Comunidade Santo Antônio</li>
-          <li>Imersão na história e cultura local</li>
-          <li>Almoço regional autêntico preparado pelos moradores</li>
-          <li>Experiência completa na cachoeira</li>
-          <li>Tempo para banho, contemplação e fotos</li>
-          <li>Guia experiente local</li>
-          <li>Equipamento de segurança</li>
-        </ul>
-      </div>
-
-      <div class="roteiro-conteudo-detalhado">
-        <h4>🌊 Comunidades do Roteiro:</h4>
-        <ul class="lista-cachoeiras">
-          <li><strong>Santo Antônio:</strong> Principal - águas cristalinas, ideal para banho e lazer</li>
-          <li><strong>Padaria:</strong> Secundária - cenário diversificado para contemplação</li>
-          <li><strong>Quilombo São José:</strong> Parada opcional - história cultural e patrimonial única</li>
-        </ul>
-      </div>
-
-      <div class="destaque-cta">
-        <p>✨ <strong>Experiência exclusiva com vagas limitadas</strong> - Reserve com antecedência!</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ROTA DA TRILHA -->
-  <div class="roteiro-card">
-    <div class="roteiro-header">
-      <h3>🥾 Rota da Trilha</h3>
-      <span class="badge-roteiro adventura">Aventura & Natureza</span>
-    </div>
-    
-    <div class="roteiro-conteudo">
-      <p class="roteiro-descricao">
-        Aventura guiada pela floresta amazônica com natureza imersiva. Explore o dia a dia da mata nativa,
-        desde o nascer do sol até banhos revigorantes em rios cristalinos.
-      </p>
-      
-      <div class="roteiro-destaque">
-        <h4>📍 Ponto de Partida</h4>
-        <p><strong>Praça do bairro Nazaré Mineiro</strong> - Encontro às 5h30 da manhã</p>
-      </div>
-
-      <div class="roteiro-info-grid">
-        <div class="info-roteiro">
-          <strong>💰 Investimento</strong>
-          <p>R$ 150,00</p>
-          <span class="por-pessoa">por pessoa</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>⏱️ Duração</strong>
-          <p>Dia completo</p>
-          <span class="por-pessoa">8-10 horas</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>👥 Grupo</strong>
-          <p>Máximo 15 pessoas</p>
-          <span class="por-pessoa">guia especializado</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>🎯 Dificuldade</strong>
-          <p>Moderado</p>
-          <span class="por-pessoa">preparação recomendada</span>
-        </div>
-      </div>
-
-      <div class="roteiro-conteudo-detalhado">
-        <h4>📋 Cronograma do Percurso:</h4>
-        <div class="parada-trilha">
-          <h5>1️⃣ Mirante da Pedra do Amor</h5>
-          <p><strong>Horário:</strong> 6h-7h | <strong>Distância:</strong> 2 km da praça</p>
-          <ul>
-            <li>Chegada estratégica para apreciar o nascer do sol</li>
-            <li>Conectar-se com a natureza em momento contemplativo</li>
-            <li>Fotos marcantes com vista panorâmica</li>
-            <li>Briefing de segurança e orientações gerais</li>
-          </ul>
-        </div>
-
-        <div class="parada-trilha">
-          <h5>2️⃣ Trilha do Açaizal</h5>
-          <p><strong>Horário:</strong> 7h-11h | <strong>Trajeto:</strong> Leve a moderado</p>
-          <ul>
-            <li>Trajeto leve com cenários naturais incríveis</li>
-            <li>Pausa para café da manhã</li>
-            <li>Descanso na comunidade do Açaizal</li>
-            <li>Observação da flora e fauna local</li>
-          </ul>
-        </div>
-
-        <div class="parada-trilha">
-          <h5>3️⃣ Comunidade Marinho</h5>
-          <p><strong>Horário:</strong> 11h-15h | <strong>Ambiente:</strong> Mata fechada imersiva</p>
-          <ul>
-            <li>Travessia pelas "Guardiãs da Floresta"</li>
-            <li>Trechos de mata fechada com ambiente totalmente imersivo</li>
-            <li>Almoço na comunidade do Marinho</li>
-            <li>Banho de rio para relaxar e recarregar energias</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="roteiro-conteudo-detalhado">
-        <h4>✓ O que está incluído:</h4>
-        <ul class="lista-inclusos">
-          <li>Guia especializado na flora e fauna</li>
-          <li>Café da manhã</li>
-          <li>Almoço regional na comunidade</li>
-          <li>Equipamento de proteção (repelente, protetor solar)</li>
-          <li>Água e hidratação durante o trajeto</li>
-          <li>Seguro de viagem incluído</li>
-        </ul>
-      </div>
-
-      <div class="destaque-cta">
-        <p>🌿 <strong>Experiência imersiva na Amazônia</strong> - Traga disposição e câmera!</p>
-      </div>
-    </div>
-  </div>
-
-<!-- EXPERIÊNCIAS -->
-<section class="destinos">
-  <h2>Experiências Inesquecíveis</h2>
+  <p class="secao-descricao">Confira algumas das experiências que preparamos para você.</p>
 
   <div class="cards">
-
     <div class="card">
       <img src="img/paisagem.jpg" alt="Cachoeira de Santo Antônio">
       <h3>Cachoeira de Santo Antônio</h3>
       <p>Águas cristalinas e cenário perfeito para relaxar.</p>
     </div>
-
     <div class="card">
       <img src="img/trilha.jpg" alt="Trilhas ecológicas">
       <h3>Trilhas na mata</h3>
       <p>Aventura guiada com conexão real com a natureza.</p>
     </div>
-
     <div class="card">
       <img src="img/rio.jpg" alt="Paisagens naturais">
       <h3>Paisagens incríveis</h3>
       <p>Mirantes naturais e cenários únicos da região.</p>
     </div>
+  </div>
 
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="roteiros.html" class="btn">Ver Roteiros Detalhados</a>
   </div>
 </section>
 
@@ -306,84 +148,17 @@
         <span class="galeria-icon">❤️</span>
       </div>
     </div>
-    <div class="galeria-item">
-      <img src="img/foto7.jpg" alt="Foto 7">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto8.jpg" alt="Foto 8">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto9.jpg" alt="Foto 9">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto10.jpg" alt="Foto 10">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto11.jpg" alt="Foto 11">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto12.jpeg" alt="Foto 12">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto13.jpg" alt="Foto 13">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto14.jpg" alt="Foto 14">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto15.jpg" alt="Foto 15">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto17.jpg" alt="Foto 17">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto18.JPG" alt="Foto 18">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
-    <div class="galeria-item">
-      <img src="img/foto19.jpg" alt="Foto 19">
-      <div class="galeria-overlay">
-        <span class="galeria-icon">❤️</span>
-      </div>
-    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="galeria.html" class="btn">Ver Galeria Completa</a>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
   <img id="img-lightbox" alt="Imagem ampliada">
+  <span class="close-lightbox">&times;</span>
 </div>
 
 <!-- BOTÃO WHATSAPP FLUTUANTE -->
@@ -393,21 +168,24 @@
 
 <!-- SERVIÇOS -->
 <section class="servicos">
-  <h2>Nossos Diferenciais</h2>
+  <h2>Por Que Escolher Nossa Empresa?</h2>
 
   <div class="cards">
 
     <div class="card">
+      <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
       <h3>Guias Locais</h3>
       <p>Experiência autêntica com quem conhece a região.</p>
     </div>
 
     <div class="card">
+      <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
       <h3>Segurança</h3>
       <p>Organização e cuidado em todos os passeios.</p>
     </div>
 
     <div class="card">
+      <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
       <h3>Experiência Completa</h3>
       <p>Do transporte à aventura, tudo pensado pra você.</p>
     </div>
@@ -419,27 +197,10 @@
 <section class="contato" id="contato">
   <div class="contato-container">
     <h2>Fale Conosco</h2>
-    <p>Tem dúvidas? Entre em contato conosco via WhatsApp, telefone ou formulário abaixo.</p>
-
-    <div class="contato-grid">
-      <div class="contato-info">
-        <h3>✉️ Email</h3>
-        <p><a href="mailto:valetripjari@gmail.com">valetripjari@gmail.com</a></p>
-      </div>
-
-      <div class="contato-info">
-        <h3>📱 WhatsApp</h3>
-        <p><a href="https://wa.me/5596991152676" target="_blank">(96) 99115-2676</a></p>
-      </div>
-
-      <div class="contato-info">
-        <h3>📸 Instagram</h3>
-        <p><a href="https://instagram.com/valetripjari" target="_blank">@valetripjari</a></p>
-      </div>
-    </div>
+    <p>Pronto para sua próxima aventura? Clique no botão abaixo para ver todas as formas de contato ou para nos enviar uma mensagem.</p>
 
     <div class="contato-cta">
-      <a href="https://wa.me/5596991152676" class="btn" target="_blank">Enviar Mensagem via WhatsApp</a>
+      <a href="contato.html" class="btn">Entrar em Contato</a>
     </div>
   </div>
 </section>
@@ -451,9 +212,9 @@
     <div class="footer-col footer-links">
       <h4>Links rápidos</h4>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="#">Destinos</a></li>
-        <li><a href="#">Galeria</a></li>
+        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="roteiros.html">Destinos</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </div>

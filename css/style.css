@@ -7,9 +7,11 @@
 
 body {
   font-family: 'Exo', sans-serif;
-  color: #333;
-  background: linear-gradient(#f0ebe0, #faf8f3);
+  color: var(--text-color);
+  background: var(--fundo);
   line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* ================= PALETA HARMÔNICA ================= */
@@ -20,28 +22,34 @@ body {
   --laranja: #e66012;
   --marrom: #7a4a2a;
   --fundo: #f0ebe0;
+  --text-color: #4a4a4a;
+  --heading-font: 'Lora', serif;
+
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.04);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* ================= TIPOGRAFIA BASE ================= */
+h1, h2, h3, h4, h5 {
+  font-family: var(--heading-font);
+  color: var(--azul);
+  font-weight: 700;
 }
 
 /* ================= HEADER ================= */
 .header {
-  background: linear-gradient(135deg, var(--azul) 0%, rgba(9, 119, 128, 0.95) 100%);
+  background-color: var(--azul);
+  /* Padrão de fundo: Linhas curvas (água/mapa) + Gradiente */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 25 25 50 10 T 100 10' stroke='rgba(255,255,255,0.08)' fill='none' stroke-width='2'/%3E%3C/svg%3E"),
+    linear-gradient(135deg, var(--azul) 0%, #005f66 100%);
+  background-size: 100px 20px, 100% 100%;
+  border-bottom: 3px dashed var(--laranja); /* Detalhe visual de "trilha" */
   position: sticky;
   top: 0;
   z-index: 999;
-  box-shadow: 0 6px 20px rgba(9, 119, 128, 0.25), inset 0 -6px 12px rgba(0,0,0,0.03);
-  border-bottom: 3px solid var(--laranja);
-}
-
-.header::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(230,96,18,0.9), rgba(230,96,18,0.3));
-  opacity: 0.18;
-  pointer-events: none;
+  box-shadow: var(--shadow-md);
 }
 
 .nav-container {
@@ -54,22 +62,6 @@ body {
   position: relative;
 }
 
-/* Detalhe branco minimalista - Montanhas do vale */
-.nav-container::after {
-  content: '';
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 120px;
-  height: 40px;
-  background: 
-    linear-gradient(135deg, transparent 45%, rgba(255, 255, 255, 0.15) 48%, rgba(255, 255, 255, 0.15) 52%, transparent 55%),
-    linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.1) 43%, rgba(255, 255, 255, 0.1) 57%, transparent 60%);
-  pointer-events: none;
-  opacity: 0.6;
-}
-
 .logo {
   height: 64px;
   width: auto;
@@ -78,8 +70,39 @@ body {
   z-index: 2;
 }
 
-.logo:hover {
+.logo:hover, .logo:focus {
   transform: scale(1.05);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.compass-icon {
+  width: 45px;
+  height: 45px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.compass-needle {
+  transform-origin: 50px 50px;
+  animation: compassMove 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes compassMove {
+  0% { transform: rotate(0deg); }
+  40% { transform: rotate(30deg); }
+  80% { transform: rotate(-20deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 3; /* Garante que fique acima da navegação */
 }
 
 nav {
@@ -96,7 +119,7 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
   position: relative;
   padding: 8px 0;
 }
@@ -112,15 +135,15 @@ nav a::before {
   transition: width 0.3s ease;
 }
 
-nav a:hover {
-  color: rgba(255, 255, 255, 0.8);
+nav a:hover, nav a:focus {
+  color: var(--verde);
+  transform: translateY(-2px);
 }
 
-nav a:hover::before {
-  width: 100%;
+nav a:hover::before, nav a:focus::before {
+  width: 60%;
 }
 
-/* separador delicado entre itens do menu */
 /* separador delicado entre itens do menu */
 /* removido: voltando ao estilo anterior sem pontos separadores */
 
@@ -142,6 +165,8 @@ nav a:hover::before {
   background:
     linear-gradient(rgba(1, 2, 2, 0.4), rgba(19, 24, 25, 0.5)),
     url('../img/hero.jpg') center/cover no-repeat;
+  background-attachment: fixed; /* Efeito de paralaxe */
+  background-attachment: fixed; /* Efeito de paralaxe */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,14 +192,14 @@ nav a:hover::before {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 .hero p {
   font-size: 1.1rem;
   margin-bottom: 25px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 /* ================= BOTÕES ================= */
@@ -185,19 +210,19 @@ nav a:hover::before {
   border-radius: 40px;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(230, 96, 18, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: var(--shadow-md);
   border: 2px solid transparent;
   display: inline-block;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   background: linear-gradient(135deg, var(--verde) 0%, #7cb61c 100%);
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(155, 199, 44, 0.4);
 }
 
-.btn:active {
+.btn:active, .btn:focus {
   transform: translateY(-1px);
 }
 
@@ -216,7 +241,7 @@ nav a:hover::before {
 }
 
 .sobre-texto h2 {
-  color: var(--azul);
+  font-size: 2.2rem;
   margin-bottom: 15px;
 }
 
@@ -227,7 +252,7 @@ nav a:hover::before {
 .sobre-img img {
   width: 100%;
   border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ================= DESTINOS ================= */
@@ -238,7 +263,7 @@ nav a:hover::before {
 }
 
 .destinos h2 {
-  color: var(--azul);
+  font-size: 2.5rem;
   margin-bottom: 35px;
 }
 
@@ -253,58 +278,44 @@ nav a:hover::before {
   background: white;
   width: 300px;
   border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-  border-top: 5px solid var(--azul);
+  overflow: visible; /* Allow shadow to be visible */
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  padding-top: 200px; /* Space for the image */
 }
 
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--verde), var(--laranja), var(--azul));
-  animation: gradientSlide 3s ease infinite;
-}
-
-@keyframes gradientSlide {
-  0%, 100% { transform: translateX(-100%); }
-  50% { transform: translateX(100%); }
-}
-
-.card:hover {
+.card:hover, .card:focus-within {
   transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(9, 119, 128, 0.2);
-  border-top-color: var(--verde);
+  box-shadow: var(--shadow-lg);
 }
 
 .card img {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.card:hover img {
+.card:hover img, .card:focus-within img {
   transform: scale(1.08);
 }
 
 .card h3 {
-  color: white;
+  color: var(--azul);
   margin: 0;
-  padding: 15px 15px 8px;
-  background: linear-gradient(135deg, var(--azul) 0%, var(--verde) 100%);
+  padding: 20px 20px 8px;
   font-size: 1.3rem;
 }
 
 .card p {
-  padding: 12px 15px 20px;
+  padding: 0 20px 25px;
   font-size: 0.92rem;
-  color: #555;
+  color: #666;
 }
 
 /* ================= SERVIÇOS ================= */
@@ -315,8 +326,29 @@ nav a:hover::before {
 }
 
 .servicos h2 {
-  color: var(--azul);
+  font-size: 2.5rem;
   margin-bottom: 30px;
+}
+
+.servicos .card {
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+.servico-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+
+.servicos .card h3 {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.servicos .card p {
+  padding: 0;
 }
 
 /* ================= CONTATO ================= */
@@ -332,13 +364,12 @@ nav a:hover::before {
 }
 
 .contato h2 {
-  color: var(--azul);
   margin-bottom: 15px;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .contato-container > p {
-  color: #666;
+  color: #555;
   font-size: 1.1rem;
   margin-bottom: 50px;
 }
@@ -354,7 +385,7 @@ nav a:hover::before {
   background: linear-gradient(135deg, rgba(9, 119, 128, 0.1) 0%, rgba(155, 199, 44, 0.05) 100%);
   padding: 30px;
   border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   border-left: 5px solid var(--azul);
   position: relative;
@@ -373,15 +404,14 @@ nav a:hover::before {
   pointer-events: none;
 }
 
-.contato-info:hover {
+.contato-info:hover, .contato-info:focus-within {
   transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(9, 119, 128, 0.2);
+  box-shadow: var(--shadow-lg);
   background: linear-gradient(135deg, rgba(9, 119, 128, 0.15) 0%, rgba(155, 199, 44, 0.1) 100%);
   border-left-color: var(--verde);
 }
 
 .contato-info h3 {
-  color: var(--azul);
   margin-bottom: 15px;
   margin-top: 0;
   font-size: 1.3rem;
@@ -391,7 +421,7 @@ nav a:hover::before {
 }
 
 .contato-info p {
-  color: #666;
+  color: #555;
   margin: 0;
   position: relative;
   z-index: 1;
@@ -406,13 +436,70 @@ nav a:hover::before {
   z-index: 1;
 }
 
-.contato-info a:hover {
+.contato-info a:hover, .contato-info a:focus {
   color: var(--verde);
   font-weight: 700;
 }
 
 .contato-cta {
   margin-top: 40px;
+}
+
+/* ================= FORMULÁRIO DE CONTATO ================= */
+.form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: left;
+}
+
+.form-container h3 {
+  margin-bottom: 25px;
+  color: var(--azul);
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Exo', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background: #f9f9f9;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgba(155, 199, 44, 0.2);
+  background: white;
+}
+
+.form-container button {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1rem;
+  margin-top: 10px;
 }
 
 /* ================= ROTEIROS ================= */
@@ -422,7 +509,6 @@ nav a:hover::before {
 }
 
 .roteiros-section h2 {
-  color: var(--azul);
   text-align: center;
   margin-bottom: 10px;
   font-size: 2.5rem;
@@ -430,7 +516,7 @@ nav a:hover::before {
 
 .secao-descricao {
   text-align: center;
-  color: #666;
+  color: #555;
   font-size: 1.1rem;
   margin-bottom: 60px;
   max-width: 600px;
@@ -443,13 +529,21 @@ nav a:hover::before {
   margin: 0 auto 60px;
   background: var(--fundo);
   border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  overflow: hidden; /* Keep this for inner elements */
+  background: white; /* Fundo branco para destacar o card */
+  box-shadow: var(--shadow-md); /* Sombra padrão */
+  transition: transform 0.6s ease-out, box-shadow 0.3s ease, opacity 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(50px);
 }
 
-.roteiro-card:hover {
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+.roteiro-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roteiro-card:hover, .roteiro-card:focus-within {
+  box-shadow: 0 18px 36px rgba(0,0,0,0.15); /* Sombra mais pronunciada no hover */
   transform: translateY(-5px);
 }
 
@@ -457,6 +551,7 @@ nav a:hover::before {
   background: linear-gradient(135deg, var(--azul) 0%, var(--verde) 100%);
   color: white;
   padding: 25px 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1); /* Linha sutil para separar */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -464,6 +559,7 @@ nav a:hover::before {
 
 .roteiro-header h3 {
   font-size: 1.8rem;
+  color: white; /* Título branco para melhor contraste */
   margin: 0;
 }
 
@@ -484,29 +580,28 @@ nav a:hover::before {
 }
 
 .roteiro-descricao {
-  color: #555;
+  color: #444;
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 30px;
 }
 
 .roteiro-destaque {
-  background: #f0f8ff;
+  background: var(--fundo); /* Usar cor do tema para destaque */
   padding: 20px;
-  border-left: 5px solid var(--azul);
+  border-left: 5px solid var(--laranja); /* Cor de destaque diferente */
   border-radius: 8px;
   margin-bottom: 30px;
 }
 
 .roteiro-destaque h4 {
-  color: var(--azul);
   margin-top: 0;
   margin-bottom: 10px;
 }
 
 .roteiro-destaque p {
   margin: 0;
-  color: #555;
+  color: #444;
 }
 
 .roteiro-info-grid {
@@ -521,7 +616,7 @@ nav a:hover::before {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .info-roteiro strong {
@@ -549,13 +644,12 @@ nav a:hover::before {
 .roteiro-conteudo-detalhado {
   margin: 30px 0;
   padding: 20px;
-  background: white;
+  background: var(--fundo); /* Fundo sutil para detalhes */
   border-left: 4px solid var(--verde);
   border-radius: 8px;
 }
 
 .roteiro-conteudo-detalhado h4 {
-  color: var(--verde-escuro);
   margin-top: 0;
   margin-bottom: 15px;
   font-size: 1.1rem;
@@ -565,7 +659,7 @@ nav a:hover::before {
 .lista-cachoeiras {
   margin: 0;
   padding-left: 20px;
-  color: #666;
+  color: #555;
 }
 
 .lista-inclusos li,
@@ -590,7 +684,7 @@ nav a:hover::before {
 }
 
 .parada-trilha p {
-  color: #666;
+  color: #555;
   margin: 8px 0;
   font-size: 0.95rem;
 }
@@ -602,7 +696,7 @@ nav a:hover::before {
 
 .parada-trilha li {
   margin-bottom: 8px;
-  color: #666;
+  color: #555;
   line-height: 1.5;
 }
 
@@ -623,6 +717,45 @@ nav a:hover::before {
   font-size: 1rem;
 }
 
+/* ================= PERSONALIZAR ROTEIRO ================= */
+.personalizar-roteiro {
+  background: linear-gradient(135deg, var(--azul) 0%, var(--verde) 100%);
+  color: white;
+  padding: 50px 30px;
+  border-radius: 14px;
+  text-align: center;
+  margin: 60px auto 40px;
+  max-width: 900px;
+  box-shadow: var(--shadow-lg);
+}
+
+.personalizar-roteiro h3 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.personalizar-roteiro p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.personalizar-roteiro .btn {
+  background: white;
+  color: var(--azul);
+  border: none;
+}
+
+.personalizar-roteiro .btn:hover {
+  background: #f9f9f9;
+  color: var(--verde);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
 /* ================= WHATSAPP FLOAT ================= */
 .whatsapp-float {
   position: fixed;
@@ -634,22 +767,19 @@ nav a:hover::before {
   padding: 15px 18px;
   border-radius: 50%;
   text-decoration: none;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow-lg);
   transition: 0.3s;
 }
 
-.whatsapp-float:hover {
+.whatsapp-float:hover, .whatsapp-float:focus {
   transform: scale(1.1);
 }
 
 /* ================= FOOTER ================= */
 
 .footer {
-  /* cor verde próxima ao logo */
-  background: linear-gradient(180deg, var(--verde-escuro) 0%, var(--verde) 100%);
+  background: var(--azul);
   color: rgba(255,255,255,0.95);
-  margin-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.03);
   font-weight: 300;
   text-align: left;
 }
@@ -659,7 +789,7 @@ nav a:hover::before {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 30px;
   padding: 12px 20px; /* reduzir altura */
   align-items: flex-start;
   justify-content: space-between; /* distribuir colunas */
@@ -673,7 +803,7 @@ nav a:hover::before {
 
 .footer h3,
 .footer h4 {
-  color: var(--laranja);
+  color: white;
   margin: 0 0 6px 0;
   font-size: 0.98rem;
   font-weight: 600;
@@ -702,7 +832,7 @@ nav a:hover::before {
   font-weight: 400;
 }
 
-.footer a:hover { color: var(--laranja); transform: translateX(3px); }
+.footer a:hover, .footer a:focus { color: var(--verde); transform: translateX(3px); }
 
 /* ícones discretos */
 .footer .icon { display:inline-flex; width:18px; height:18px; margin-right:8px; vertical-align:middle; color: rgba(255,255,255,0.95); }
@@ -714,7 +844,7 @@ nav a:hover::before {
 
 .footer-bottom {
   text-align: center;
-  background: transparent;
+  background: rgba(0,0,0,0.1);
   padding: 8px 12px; /* reduzir ainda mais */
   font-size: 0.9rem;
   color: rgba(255,255,255,0.82);
@@ -742,7 +872,7 @@ nav a:hover::before {
     padding: 20px 0;
     transform: translateY(-200%);
     transition: 0.3s ease;
-    display: flex !important;
+    display: flex;
   }
 
   nav.active {
@@ -751,6 +881,10 @@ nav a:hover::before {
 
   .menu-toggle {
     display: block;
+  }
+
+  .compass-icon {
+    display: none; /* Oculta a bússola em telas menores para economizar espaço */
   }
 
   /* HERO */
@@ -844,7 +978,7 @@ nav a:hover::before {
 }
 
 .galeria h2 {
-  color: var(--azul);
+  font-size: 2.5rem;
   margin-bottom: 40px;
 }
 
@@ -937,11 +1071,35 @@ nav a:hover::before {
   animation: zoom 0.3s ease;
 }
 
+.close-lightbox {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+  color: #bbb;
+}
+
 @keyframes zoom {
   from { transform: scale(0.7); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
-html {
-  scroll-behavior: smooth;
+.footer a {
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
 }
