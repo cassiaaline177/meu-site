@@ -28,15 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
   // ========== LIGHTBOX ==========
   const lightbox = document.getElementById('lightbox');
   const imgLightbox = document.getElementById('img-lightbox');
-  const galeriaImgs = document.querySelectorAll('.galeria-item img');
+  const galeriaItems = document.querySelectorAll('.galeria-item');
   const closeBtn = document.querySelector('.close-lightbox');
 
-  if (lightbox && imgLightbox && galeriaImgs.length > 0) {
-    galeriaImgs.forEach(img => {
-      img.addEventListener('click', function() {
-        imgLightbox.src = this.src;
-        imgLightbox.alt = this.alt;
-        lightbox.classList.add('active');
+  if (lightbox && imgLightbox && galeriaItems.length > 0) {
+    galeriaItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const img = this.querySelector('img');
+        if (img) {
+          imgLightbox.src = img.src;
+          imgLightbox.alt = img.alt;
+          lightbox.classList.add('active');
+        }
       });
     });
 
@@ -86,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     threshold: 0.1 // Trigger when 10% of the element is visible
   });
 
-  const animatedElements = document.querySelectorAll('.roteiro-card');
+  const animatedElements = document.querySelectorAll('.sobre-texto, .sobre-img, .roteiros-section h2, .secao-descricao');
   animatedElements.forEach((el) => observer.observe(el));
 
   // ========== FORMULÁRIO DE CONTATO ==========

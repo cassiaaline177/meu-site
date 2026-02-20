@@ -166,7 +166,6 @@ nav a:hover::before, nav a:focus::before {
     linear-gradient(rgba(1, 2, 2, 0.4), rgba(19, 24, 25, 0.5)),
     url('../img/hero.jpg') center/cover no-repeat;
   background-attachment: fixed; /* Efeito de paralaxe */
-  background-attachment: fixed; /* Efeito de paralaxe */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -255,6 +254,24 @@ nav a:hover::before, nav a:focus::before {
   box-shadow: var(--shadow-lg);
 }
 
+.sobre-texto, .sobre-img {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+}
+
+.sobre-texto {
+  transform: translateX(-50px);
+}
+
+.sobre-img {
+  transform: translateX(50px);
+}
+
+.sobre-texto.is-visible, .sobre-img.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* ================= DESTINOS ================= */
 .destinos {
   padding: 80px 20px;
@@ -286,7 +303,6 @@ nav a:hover::before, nav a:focus::before {
 }
 
 .card:hover, .card:focus-within {
-  transform: translateY(-12px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -299,10 +315,6 @@ nav a:hover::before, nav a:focus::before {
   height: 200px;
   object-fit: cover;
   transition: transform 0.3s ease;
-}
-
-.card:hover img, .card:focus-within img {
-  transform: scale(1.08);
 }
 
 .card h3 {
@@ -512,6 +524,9 @@ nav a:hover::before, nav a:focus::before {
   text-align: center;
   margin-bottom: 10px;
   font-size: 2.5rem;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(-20px);
 }
 
 .secao-descricao {
@@ -522,6 +537,15 @@ nav a:hover::before, nav a:focus::before {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.roteiros-section h2.is-visible,
+.secao-descricao.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .roteiro-card {
@@ -532,19 +556,11 @@ nav a:hover::before, nav a:focus::before {
   overflow: hidden; /* Keep this for inner elements */
   background: white; /* Fundo branco para destacar o card */
   box-shadow: var(--shadow-md); /* Sombra padrão */
-  transition: transform 0.6s ease-out, box-shadow 0.3s ease, opacity 0.6s ease-out;
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.roteiro-card.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .roteiro-card:hover, .roteiro-card:focus-within {
   box-shadow: 0 18px 36px rgba(0,0,0,0.15); /* Sombra mais pronunciada no hover */
-  transform: translateY(-5px);
 }
 
 .roteiro-header {
@@ -891,6 +907,7 @@ nav a:hover::before, nav a:focus::before {
   .hero {
     height: auto;
     min-height: 50vh;
+    background-attachment: scroll; /* Corrige o problema da imagem no celular */
   }
 
   .hero h1 {
