@@ -641,26 +641,24 @@ nav a:hover::before, nav a:focus::before {
 @media (min-width: 769px) {
   .comunidade-card {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    min-height: 280px; /* Altura mínima para ficar elegante */
+    align-items: center; /* Alinha verticalmente imagem e texto */
   }
 
   .comunidade-card .roteiro-card-img {
-    width: 35%; /* Imagem ocupa 35% da largura */
-    height: auto; /* Altura automática para acompanhar o card */
-    min-height: 100%;
-    object-fit: cover; /* Preenche o espaço lateral sem distorcer */
+    width: 400px; /* Largura fixa para a imagem, garantindo consistência */
+    height: 300px; /* Altura fixa para alinhar todos os cards */
+    object-fit: cover;
+    flex-shrink: 0; /* Impede que a imagem seja espremida */
     border-bottom: none;
-    border-right: 1px solid rgba(0,0,0,0.05);
+    border-right: none;
+    min-height: 0;
   }
 
   .comunidade-card .roteiro-conteudo {
-    width: 65%; /* Texto ocupa o restante */
+    width: auto;
+    flex: 1;
     padding: 30px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centraliza o texto verticalmente */
+    display: block; /* Simplifica o layout do conteúdo */
   }
 }
 
@@ -1159,29 +1157,31 @@ nav a:hover::before, nav a:focus::before {
     margin-left: 0; /* Remove margem extra no mobile para ganhar espaço */
   }
 
-  /* Ajuste para Comunidades no Celular: Lado a Lado */
+  /* Ajuste para Comunidades no Celular: Miniatura */
   .comunidade-card {
     display: flex;
-    flex-direction: row; /* Força imagem ao lado do texto */
-    align-items: stretch;
-    min-height: 160px;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px 15px; /* Espaçamento interno para criar o card com miniatura */
+    gap: 15px;
   }
 
   .comunidade-card .roteiro-card-img {
-    width: 40%; /* Imagem ocupa 40% da largura */
-    height: auto; /* Altura se ajusta ao conteúdo */
-    min-height: 100%;
-    object-fit: contain; /* Mantém a imagem inteira */
-    border-bottom: none;
-    border-right: 1px solid rgba(0,0,0,0.05);
+    width: 90px; /* Largura fixa de miniatura */
+    height: 90px; /* Altura fixa */
+    min-height: 0;
+    object-fit: cover; /* Preenche o quadrado sem distorcer */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    border: none;
   }
 
   .comunidade-card .roteiro-conteudo {
-    width: 60%; /* Texto ocupa 60% */
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: auto;
+    flex: 1;
+    padding: 0;
+    display: block;
   }
 
   .comunidade-card h3 {
@@ -1196,18 +1196,23 @@ nav a:hover::before, nav a:focus::before {
   }
   
   .comunidade-card .roteiro-destaque {
-    padding: 10px;
+    padding: 0; /* Remove padding extra */
+    margin-top: 15px; /* Adiciona espaço acima */
     margin-bottom: 0;
+    background: transparent; /* Remove fundo para um visual mais limpo */
+    border: none; /* Remove a borda lateral */
   }
   
   .comunidade-card .roteiro-destaque h4 {
-    font-size: 0.85rem;
+    font-size: 0.9rem; /* Aumenta um pouco para dar mais destaque */
     margin-bottom: 5px;
+    color: var(--azul); /* Garante que o título se destaque */
   }
   
   .comunidade-card .roteiro-destaque p, 
   .comunidade-card .roteiro-destaque li {
-    font-size: 0.8rem;
+    font-size: 0.85rem; /* Aumenta a legibilidade do texto de destaque */
+    line-height: 1.5;
   }
 }
 /* ================= GALERIA PREMIUM ================= */
