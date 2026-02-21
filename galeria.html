@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veja fotos incríveis das belezas naturais do Vale do Jari. Cachoeiras, trilhas, fauna, flora e a cultura das comunidades locais registradas em nossas expedições turísticas.">
   <title>Galeria - Vale Trip Jari</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
@@ -23,6 +24,18 @@
     <nav id="menu">
       <a href="index.html">Início</a>
       <a href="index.html#sobre">Sobre</a>
+      
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Comunidades</a>
+        <div class="dropdown-content">
+          <a href="#padaria">Padaria</a>
+          <a href="#quilombo">Quilombo São José</a>
+          <a href="#santo-antonio">Santo Antônio</a>
+          <a href="#marinho">Marinho</a>
+          <a href="#acaizal">Açaizal</a>
+        </div>
+      </div>
+
       <a href="galeria.html" style="color: var(--verde);">Galeria</a>
       <a href="contato.html">Contato</a>
     </nav>
@@ -77,6 +90,19 @@
     <div class="galeria-item"><img src="img/paisagem.jpg" alt="Cachoeira de Santo Antônio"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
     <div class="galeria-item"><img src="img/trilha.jpg" alt="Trilhas ecológicas"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
     <div class="galeria-item"><img src="img/rio.jpg" alt="Paisagens naturais"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto25.jpg" alt="Foto 25"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto26.jpg" alt="Foto 26"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto27.jpg" alt="Foto 27"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto28.jpg" alt="Foto 28"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto29.jpg" alt="Foto 29"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto30.jpg" alt="Foto 30"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto31.jpg" alt="Foto 31"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto32.jpg" alt="Foto 32"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto33.jpg" alt="Foto 33"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto34.jpg" alt="Foto 34"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto35.jpg" alt="Foto 35"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto37.jpg" alt="Foto 37"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item"><img src="img/foto38.jpg" alt="Foto 38"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
   </div>
 
   <div style="text-align: center; margin-top: 40px;">
@@ -88,7 +114,12 @@
 
 <!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
-  <img id="img-lightbox" alt="Imagem ampliada">
+  <div class="lightbox-wrapper">
+    <img id="img-lightbox" alt="Imagem ampliada">
+    <img src="img/logo.png.png" class="lightbox-logo" alt="Vale Trip Jari">
+  </div>
+  <span class="lightbox-btn prev-btn">&#10094;</span>
+  <span class="lightbox-btn next-btn">&#10095;</span>
   <span class="close-lightbox">&times;</span>
 </div>
 

@@ -144,6 +144,70 @@ nav a:hover::before, nav a:focus::before {
   width: 60%;
 }
 
+/* ================= DROPDOWN MENU ================= */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropbtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropbtn::after {
+  content: '▾';
+  font-size: 0.8em;
+  margin-top: 2px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 8px 0;
+  z-index: 1000;
+  text-align: left;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: var(--text-color) !important; /* Força cor escura no fundo branco */
+  padding: 10px 20px;
+  display: block;
+  font-weight: normal;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background-color: #f8f9fa;
+  color: var(--verde) !important;
+  transform: translateX(5px);
+}
+
+.dropdown-content a::before {
+  display: none; /* Remove o sublinhado padrão do menu principal */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
 /* separador delicado entre itens do menu */
 /* removido: voltando ao estilo anterior sem pontos separadores */
 
@@ -563,6 +627,43 @@ nav a:hover::before, nav a:focus::before {
   box-shadow: 0 18px 36px rgba(0,0,0,0.15); /* Sombra mais pronunciada no hover */
 }
 
+/* Imagem de destaque nos cards de roteiro/comunidade */
+.roteiro-card-img {
+  width: 100%;
+  height: 350px; /* Altura fixa para manter a uniformidade dos cards */
+  object-fit: contain; /* Garante que a imagem apareça INTEIRA, sem cortes */
+  background-color: var(--fundo); /* Preenche o espaço vazio com a cor do tema */
+  display: block;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Layout lateral para Comunidades (Desktop) */
+@media (min-width: 769px) {
+  .comunidade-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 280px; /* Altura mínima para ficar elegante */
+  }
+
+  .comunidade-card .roteiro-card-img {
+    width: 35%; /* Imagem ocupa 35% da largura */
+    height: auto; /* Altura automática para acompanhar o card */
+    min-height: 100%;
+    object-fit: cover; /* Preenche o espaço lateral sem distorcer */
+    border-bottom: none;
+    border-right: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .comunidade-card .roteiro-conteudo {
+    width: 65%; /* Texto ocupa o restante */
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+  }
+}
+
 .roteiro-header {
   background: linear-gradient(135deg, var(--azul) 0%, var(--verde) 100%);
   color: white;
@@ -633,6 +734,8 @@ nav a:hover::before, nav a:focus::before {
   border-radius: 10px;
   text-align: center;
   box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .info-roteiro strong {
@@ -657,6 +760,11 @@ nav a:hover::before, nav a:focus::before {
   margin-top: 5px;
 }
 
+.info-roteiro:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
 .roteiro-conteudo-detalhado {
   margin: 30px 0;
   padding: 20px;
@@ -674,7 +782,8 @@ nav a:hover::before, nav a:focus::before {
 .lista-inclusos,
 .lista-cachoeiras {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none; /* Remove bolinhas padrão */
   color: #555;
 }
 
@@ -682,6 +791,18 @@ nav a:hover::before, nav a:focus::before {
 .lista-cachoeiras li {
   margin-bottom: 10px;
   line-height: 1.6;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* Ícone de Check personalizado */
+.lista-inclusos li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--verde);
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 /* PAUSAS DA TRILHA */
@@ -689,8 +810,24 @@ nav a:hover::before, nav a:focus::before {
   background: white;
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
-  border-left: 5px solid var(--laranja);
+  border-radius: 0 10px 10px 0;
+  border-left: 4px solid var(--laranja);
+  position: relative;
+  margin-left: 15px; /* Espaço para a bolinha da timeline */
+}
+
+/* Bolinha da Timeline */
+.parada-trilha::before {
+  content: '';
+  position: absolute;
+  left: -24px; /* Posiciona a bolinha na linha imaginária */
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: var(--laranja);
+  border-radius: 50%;
+  border: 4px solid white; /* Cria um efeito de anel */
+  box-shadow: 0 0 0 1px var(--laranja); /* Borda externa fina */
 }
 
 .parada-trilha h5 {
@@ -986,6 +1123,41 @@ nav a:hover::before, nav a:focus::before {
   .footer-col {
     min-width: 100%;
   }
+
+  /* Mobile Dropdown */
+  .dropdown {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .dropdown-content {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    animation: none;
+  }
+  
+  .dropdown-content a {
+    color: white !important;
+    padding: 12px;
+  }
+  
+  .dropdown-content a:hover {
+    background: rgba(255,255,255,0.1);
+    transform: none;
+  }
+
+  .roteiro-card-img {
+    height: 200px; /* Altura menor no celular */
+  }
+
+  .parada-trilha {
+    margin-left: 0; /* Remove margem extra no mobile para ganhar espaço */
+  }
 }
 /* ================= GALERIA PREMIUM ================= */
 .galeria {
@@ -1044,6 +1216,23 @@ nav a:hover::before, nav a:focus::before {
   opacity: 1;
 }
 
+/* Marca d'água na Galeria */
+.galeria-item::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 40px; /* Ajuste o tamanho conforme necessário */
+  height: 40px;
+  background-image: url('../img/logo.png.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8; /* Transparência da marca d'água */
+  z-index: 2;
+  pointer-events: none; /* Permite clicar na foto através da logo */
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5)); /* Sombra para contraste em fotos claras */
+}
+
 .galeria-icon {
   font-size: 3rem;
   animation: heartbeat 0.6s ease infinite;
@@ -1080,12 +1269,71 @@ nav a:hover::before, nav a:focus::before {
   visibility: visible;
 }
 
-#lightbox img {
+/* Wrapper para garantir que a logo fique EM CIMA da imagem */
+.lightbox-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 90%;
   max-height: 85%;
+}
+
+#img-lightbox {
+  max-width: 100%;
+  max-height: 85vh; /* Garante que a imagem não estoure a altura da tela */
   border-radius: 12px;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
   animation: zoom 0.3s ease;
+  display: block;
+}
+
+/* Logo dentro do Lightbox */
+.lightbox-logo {
+  position: absolute;
+  bottom: 15px; /* Ajustado para ficar no cantinho da FOTO */
+  left: 15px;
+  width: 100px; /* Tamanho maior que na miniatura */
+  height: auto;
+  z-index: 10001; /* Fica acima da imagem ampliada */
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.8)); /* Sombra forte para contraste */
+  pointer-events: none;
+}
+
+/* Botões de Navegação do Lightbox */
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+  z-index: 10002; /* Acima da imagem e da logo */
+  transition: 0.3s ease;
+  background: rgba(0,0,0,0.2); /* Fundo sutil para garantir contraste */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-btn:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--verde);
+}
+
+.prev-btn {
+  left: 20px;
+}
+
+.next-btn {
+  right: 20px;
 }
 
 .close-lightbox {
@@ -1093,6 +1341,33 @@ nav a:hover::before, nav a:focus::before {
   top: 15px;
   right: 35px;
   color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+  color: #bbb;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.footer a {
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+}
   font-size: 40px;
   font-weight: bold;
   transition: 0.3s;
