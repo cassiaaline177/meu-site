@@ -33,6 +33,7 @@
           <a href="roteiros.html#santo-antonio">Santo Antônio</a>
           <a href="roteiros.html#marinho">Marinho</a>
           <a href="roteiros.html#acaizal">Açaizal</a>
+          <a href="roteiros.html#iratapuru">Iratapuru</a>
         </div>
       </div>
 
@@ -41,12 +42,6 @@
     </nav>
 
     <div class="header-right">
-      <svg class="compass-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="42" stroke="white" stroke-width="4" fill="rgba(255,255,255,0.1)"/>
-        <path d="M50 10 L50 20 M50 80 L50 90 M10 50 L20 50 M80 50 L90 50" stroke="white" stroke-width="4" stroke-linecap="round"/>
-        <polygon class="compass-needle" points="50,25 62,50 50,75 38,50" fill="#e66012"/>
-        <circle cx="50" cy="50" r="4" fill="white"/>
-      </svg>
       <button class="menu-toggle" aria-label="Menu">
         ☰
       </button>
@@ -61,48 +56,45 @@
 <section class="galeria" id="galeria">
   <h2>Nossa Galeria Completa</h2>
   <p style="text-align: center; margin-bottom: 40px; color: #555;">Confira os melhores momentos de nossas aventuras.</p>
+  
+  <!-- FILTROS DA GALERIA -->
+  <div class="filter-controls">
+    <button class="filter-btn active" data-filter="all">Todas</button>
+    <button class="filter-btn" data-filter="cachoeira">Cachoeiras</button>
+    <button class="filter-btn" data-filter="trilha">Trilhas</button>
+    <button class="filter-btn" data-filter="comunidade">Comunidades</button>
+    <button class="filter-btn" data-filter="natureza">Natureza</button>
+  </div>
 
   <div class="galeria-grid">
     <!-- Todas as fotos -->
-    <div class="galeria-item"><img src="img/foto1.jpg" alt="Foto 1"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto2.jpg" alt="Foto 2"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto3.JPG" alt="Foto 3"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto4.jpg" alt="Foto 4"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto5.JPG" alt="Foto 5"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto6.JPG" alt="Foto 6"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto7.jpg" alt="Foto 7"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto8.jpg" alt="Foto 8"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto9.jpg" alt="Foto 9"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto10.jpg" alt="Foto 10"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto11.jpg" alt="Foto 11"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto12.jpeg" alt="Foto 12"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto13.jpg" alt="Foto 13"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto14.jpg" alt="Foto 14"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto15.jpg" alt="Foto 15"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto17.jpg" alt="Foto 17"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto18.JPG" alt="Foto 18"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto19.jpg" alt="Foto 19"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto20.jpg" alt="Foto 20"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto21.jpg" alt="Foto 21"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto22.jpg" alt="Foto 22"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto23.jpg" alt="Foto 23"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto24.jpg" alt="Foto 24"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/paisagem.jpg" alt="Cachoeira de Santo Antônio"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/trilha.jpg" alt="Trilhas ecológicas"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/rio.jpg" alt="Paisagens naturais"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto25.jpg" alt="Foto 25"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto26.jpg" alt="Foto 26"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto27.jpg" alt="Foto 27"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto28.jpg" alt="Foto 28"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto29.jpg" alt="Foto 29"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto30.jpg" alt="Foto 30"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto31.jpg" alt="Foto 31"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto32.jpg" alt="Foto 32"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto33.jpg" alt="Foto 33"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto34.jpg" alt="Foto 34"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto35.jpg" alt="Foto 35"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto37.jpg" alt="Foto 37"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
-    <div class="galeria-item"><img src="img/foto38.jpg" alt="Foto 38"><div class="galeria-overlay"><span class="galeria-icon">❤️</span></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/iratapuru.jpg" alt="Comunidade do Iratapuru"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/foto1.jpg" alt="Patos em riacho"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/foto2.jpg" alt="Corredeira de rio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/foto3.JPG" alt="Árvore na floresta"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/foto4.jpg" alt="Cachoeira"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/foto5.JPG" alt="Trilha na mata"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/foto6.JPG" alt="Vista do rio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/foto7.jpg" alt="Comunidade ribeirinha"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/foto8.jpg" alt="Barco no rio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/foto9.jpg" alt="Queda d'água"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/foto10.jpg" alt="Ponte em trilha"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/foto11.jpg" alt="Paisagem do rio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/foto12.jpeg" alt="Cachoeira de Santo Antônio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/foto13.jpg" alt="Vida na comunidade"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/foto14.jpg" alt="Pôr do sol no rio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/foto15.jpg" alt="Caminhada na mata"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/foto17.jpg" alt="Pessoas na cachoeira"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/foto18.JPG" alt="Vegetação da trilha"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/foto19.jpg" alt="Detalhe da flora"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/foto20.jpg" alt="Crianças na comunidade"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/foto21.jpg" alt="Vista da cachoeira"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/foto22.jpg" alt="Grupo em trilha"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/foto23.jpg" alt="Animal silvestre"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/foto24.jpg" alt="Casa na comunidade"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/paisagem.jpg" alt="Cachoeira de Santo Antônio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/trilha.jpg" alt="Trilhas ecológicas"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/rio.jpg" alt="Paisagens naturais"><div class="galeria-overlay"></div></div>
   </div>
 
   <div style="text-align: center; margin-top: 40px;">
