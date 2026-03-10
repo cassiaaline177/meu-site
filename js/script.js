@@ -43,10 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Fecha ao clicar num link do menu
-  menu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
-  });
 
   // Fecha ao clicar fora do menu (no overlay)
   document.addEventListener('click', function (e) {
@@ -67,21 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 });
-
-    // Lógica unificada para fechar o menu
-    document.addEventListener('click', function(e) {
-      // Só faz algo se o menu estiver ativo
-      if (!menu.classList.contains('active')) return;
-
-      // Não fecha se o clique foi no próprio botão de abrir/fechar
-      if (e.target.closest('.menu-toggle')) return;
-
-      // Fecha se o clique foi fora do menu, em um link, ou no botão de fechar
-      if (!e.target.closest('nav') || e.target.closest('nav a') || e.target.closest('.close-menu-btn')) {
-        closeMenu();
-      }
-    });
-  }
 
   // ========== LIGHTBOX ==========
   const lightbox = document.getElementById('lightbox');
