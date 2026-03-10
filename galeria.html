@@ -6,6 +6,9 @@
   <meta name="description" content="Veja fotos incríveis das belezas naturais do Vale do Jari. Cachoeiras, trilhas, fauna, flora e a cultura das comunidades locais registradas em nossas expedições turísticas.">
   <title>Galeria - Vale Trip Jari</title>
 
+  <link rel="icon" href="img/logo.png.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo.png.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -17,28 +20,16 @@
 <header class="header">
   <div class="nav-container">
 
-    <a href="index.html" class="logo-container">
-      <img src="img/logo.png.png" class="logo" alt="Vale Trip Jari">
-    </a>
+    <a href="index.html" class="logo-container"><img src="img/logo_branca.png" alt="Logo Vale Trip Jari" class="logo"></a>
 
     <nav id="menu">
+      <button class="close-menu-btn" aria-label="Fechar Menu">&times;</button>
       <a href="index.html">Início</a>
-      <a href="index.html#sobre">Sobre</a>
-      
-      <div class="dropdown">
-        <a href="roteiros.html#destinos" class="dropbtn">Comunidades</a>
-        <div class="dropdown-content">
-          <a href="roteiros.html#padaria">Padaria</a>
-          <a href="roteiros.html#quilombo">Quilombo São José</a>
-          <a href="roteiros.html#santo-antonio">Santo Antônio</a>
-          <a href="roteiros.html#marinho">Marinho</a>
-          <a href="roteiros.html#acaizal">Açaizal</a>
-          <a href="roteiros.html#iratapuru">Iratapuru</a>
-        </div>
-      </div>
-
-      <a href="galeria.html" style="color: var(--verde);">Galeria</a>
-      <a href="contato.html">Contato</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="roteiros.html#comunidades">Comunidades</a>
+      <a href="galeria.html" class="active-link">Galeria</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contato.html" class="nav-btn">Contato</a>
     </nav>
 
     <div class="header-right">
@@ -59,12 +50,13 @@
   
   <div class="galeria-grid">
     <!-- Todas as fotos -->
+    <div class="galeria-item" data-category="comunidade"><img src="img/pesca.jpg" alt="pesca rio paru"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="comunidade"><img src="img/iratapuru.jpg" alt="Comunidade do Iratapuru"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="natureza"><img src="img/foto1.jpg" alt="Patos em riacho"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="cachoeira"><img src="img/foto2.jpg" alt="Corredeira de rio"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="trilha"><img src="img/foto3.jpg" alt="Árvore na floresta"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/pesca2.jpg" alt="Pesca na comunidade"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="cachoeira"><img src="img/foto4.jpg" alt="Cachoeira"><div class="galeria-overlay"></div></div>
-    <div class="galeria-item" data-category="trilha"><img src="img/foto5.jpg" alt="Trilha na mata"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="natureza"><img src="img/foto6.jpg" alt="Vista do rio"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="comunidade"><img src="img/foto7.jpg" alt="Comunidade ribeirinha"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="natureza"><img src="img/foto8.jpg" alt="Barco no rio"><div class="galeria-overlay"></div></div>
@@ -87,6 +79,18 @@
     <div class="galeria-item" data-category="cachoeira"><img src="img/paisagem.jpg" alt="Cachoeira de Santo Antônio"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="trilha"><img src="img/trilha.jpg" alt="Trilhas ecológicas"><div class="galeria-overlay"></div></div>
     <div class="galeria-item" data-category="natureza"><img src="img/rio.jpg" alt="Paisagens naturais"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/foto39.jpg" alt="trilha marinho"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/foto40.jpg" alt="trilha marinha"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/foto41.jpg" alt="trilha marinha"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/42.jpg" alt="trilha marinha"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/43.jpg" alt="cemitério santo antonio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/44.jpg" alt="cachoeira de santo antonio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="trilha"><img src="img/45.jpg" alt="cachoeira de santo antonio"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/46.jpg" alt=catraias"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="comunidade"><img src="img/47.jpg" alt="restaurante"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/48.jpg" alt="trilha cachoeira"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="cachoeira"><img src="img/49.jpg" alt="pessoas"><div class="galeria-overlay"></div></div>
+    <div class="galeria-item" data-category="natureza"><img src="img/50.jpg" alt="cachoeira"><div class="galeria-overlay"></div></div>
   </div>
 
   <div style="text-align: center; margin-top: 40px;">
@@ -100,7 +104,7 @@
 <div id="lightbox" class="lightbox">
   <div class="lightbox-wrapper">
     <img id="img-lightbox" alt="Imagem ampliada">
-    <img src="img/logo.png.png" class="lightbox-logo" alt="Vale Trip Jari">
+    <img src="img/logo_branca.png" class="lightbox-logo" alt="Vale Trip Jari">
   </div>
   <span class="lightbox-btn prev-btn">&#10094;</span>
   <span class="lightbox-btn next-btn">&#10095;</span>
@@ -112,17 +116,34 @@
   💬
 </a>
 
+<!-- BOTÃO VOLTAR AO TOPO -->
+<button id="back-to-top" aria-label="Voltar ao topo">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-col footer-links">
       <h4>Links rápidos</h4>
       <ul>
         <li><a href="index.html">Início</a></li>
-        <li><a href="roteiros.html">Destinos</a></li>
+        <li><a href="roteiros.html">Destinos</a></li> 
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html#pacotes-turisticos">Pacotes</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-destinos">
+      <h4>Destinos Populares</h4>
+      <ul>
+        <li><a href="roteiros.html#santo-antonio">Cachoeira de Santo Antônio</a></li>
+        <li><a href="roteiros.html#rota-trilha">Trilha da Floresta Tropical</a></li>
+        <li><a href="roteiros.html#padaria">Comunidade de Padaria</a></li>
+        <li><a href="roteiros.html#quilombo">Quilombo São José</a></li>
+        <li><a href="roteiros.html#comunidades">Comunidades</a></li>
       </ul>
     </div>
 
@@ -131,40 +152,39 @@
       <ul>
         <li class="contact-item">
           <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           </span>
-          <span> Laranjal do Jari - AP</span>
+          <a href="https://www.google.com/maps/place/Laranjal+do+Jari+-+AP" target="_blank" rel="noopener noreferrer"> Laranjal do Jari - AP</a>
         </li>
         <li class="contact-item">
           <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15.46a2 2 0 0 1-2.18.54 11.36 11.36 0 0 1-5.21-3.38 11.36 11.36 0 0 1-3.38-5.21A2 2 0 0 1 11 5h2a2 2 0 0 1 2 1.72c.07.89.3 1.76.65 2.56a2 2 0 0 1-.45 2.12L14 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </span>
-          <a href="https://wa.me/5596991152676" target="_blank">(96) 99115-2676</a>
+          <a href="tel:+5596991152676">(96) 99115-2676</a>
         </li>
         <li class="contact-item">
           <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6.5l-9 6-9-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </span>
           <a href="mailto:valetripjari@gmail.com">valetripjari@gmail.com</a>
         </li>
-        <li class="contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.4"/><path d="M16 11.37A4 4 0 1 1 12.63 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <a href="https://instagram.com/valetripjari" target="_blank">@valetripjari</a>
-        </li>
       </ul>
-    </div>
-
-    <div class="footer-col footer-about">
-      <h3>Vale Trip Jari</h3>
-      <p>Conectamos você às paisagens mais incríveis da Amazônia.<br>Experiências autênticas, seguras e memoráveis.</p>
+      <div class="footer-social-icons">
+        <a href="https://instagram.com/valetripjari" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c2.71 0 3.05.01 4.12.06 1.07.05 1.75.22 2.22.41.6.25 1.09.58 1.59 1.08.5.5.83.99 1.08 1.59.19.47.36 1.15.41 2.22.05 1.07.06 1.41.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.75-.41 2.22-.25.6-.58 1.09-1.08 1.59-.5.5-.99.83-1.59 1.08-.47.19-1.15.36-2.22.41-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.75-.22-2.22-.41-.6-.25-1.09-.58-1.59-1.08-.5-.5-.83-.99-1.08-1.59-.19-.47-.36-1.15-.41-2.22-.05-1.07-.06-1.41-.06-4.12s.01-3.05.06-4.12c.05-1.07.22-1.75.41 2.22.25.6.58 1.09 1.08 1.59.5.5.99.83 1.59 1.08.47.19 1.15.36 2.22.41C8.95 2.01 9.29 2 12 2zm0 2c-2.67 0-3 .01-4.04.06-1.02.05-1.4.21-1.73.35-.45.15-.78.34-1.09.65-.31.31-.5.64-.65 1.09-.14.33-.3.71-.35 1.73-.05 1.04-.06 1.37-.06 4.04s.01 3 .06 4.04c.05 1.02.21 1.4.35 1.73.15.45.34.78.65 1.09.31.31.64.5 1.09.65.33.14.71.3 1.73.35 1.04.05 1.37.06 4.04.06s3-.01 4.04-.06c1.02-.05 1.4-.21 1.73-.35.45-.15.78-.34 1.09-.65.31-.31-.5-.64.65-1.09.14-.33.3-.71.35-1.73.05-1.04.06-1.37.06-4.04s-.01-3-.06-4.04c-.05-1.02-.21-1.4-.35-1.73-.15-.45-.34-.78-.65-1.09-.31-.31-.64-.5-1.09-.65-.33-.14-.71-.3-1.73-.35C15 4.01 14.67 4 12 4zm0 3.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm6.5-2.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></a>
+        <a href="https://tiktok.com/@valetripjari" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82s.51.5 1.24 1.2c.78.74 1.73 1.28 2.9 1.46v3.28c-1.42-.2-2.69-.8-3.68-1.73v6.52a4.48 4.48 0 1 1-4.48-4.48v3.28a1.2 1.2 0 1 0 1.2 1.2V5.82h3.28z"/></svg></a>
+        <a href="mailto:valetripjari@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></a>
+        <a href="https://wa.me/5596991152676" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.58 1.34 5.14L2 22l5.25-1.4c1.5.83 3.2.13 4.94.13h.01c5.46 0 9.91-4.45 9.91-9.91C22 6.45 17.5 2 12.04 2zM17.23 14.25c-.2-.11-1.16-.57-1.34-.64-.18-.07-.32-.11-.45.11-.14.22-.51.64-.62.77-.12.13-.23.14-.43.05-.2-.1-1.03-.38-1.96-1.21-.72-.64-1.2-1.42-1.37-1.66-.17-.25-.02-.38.1-.51.11-.11.23-.28.35-.42.12-.14.16-.23.24-.39.08-.15.04-.28-.02-.39l-.45-1.08c-.18-.42-.35-.36-.48-.37h-.3c-.13 0-.32.05-.48.22-.17.18-.65.64-.65 1.57 0 .93.67 1.82.76 1.95.09.13 1.32 2.02 3.23 2.85.47.2.84.32 1.12.4.45.12 1.16.1 1.61-.19.5-.3.9-.86 1.03-1.66.12-.8-.04-1.47-.16-1.61-.12-.14-.28-.22-.43-.28z"/></svg></a>
+      </div>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Vale Trip Jari • Todos os direitos reservados</p>
+    <p>© 2026 Vale Trip Jari. Todos os direitos reservados.</p>
+    <div class="footer-legal-links">
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
+      <a href="termos-de-uso.html">Termos de Uso</a>
+    </div>
   </div>
 </footer>
 

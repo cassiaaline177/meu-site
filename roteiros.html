@@ -6,6 +6,9 @@
   <meta name="description" content="Confira nossos roteiros turísticos no Vale do Jari. Visite a Cachoeira de Santo Antônio, comunidades ribeirinhas (Padaria, Açaizal) e o Quilombo São José. Pacotes completos com guia, transporte e alimentação.">
   <title>Roteiros - Vale Trip Jari</title>
 
+  <link rel="icon" href="img/logo.png.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo.png.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -17,28 +20,16 @@
 <header class="header">
   <div class="nav-container">
 
-    <a href="index.html" class="logo-container">
-      <img src="img/logo.png.png" class="logo" alt="Vale Trip Jari">
-    </a>
+    <a href="index.html" class="logo-container"><img src="img/logo_branca.png" alt="Logo Vale Trip Jari" class="logo"></a>
 
     <nav id="menu">
+      <button class="close-menu-btn" aria-label="Fechar Menu">&times;</button>
       <a href="index.html">Início</a>
-      <a href="index.html#sobre">Sobre</a>
-      
-      <div class="dropdown">
-        <a href="#destinos" class="dropbtn">Comunidades</a>
-        <div class="dropdown-content">
-          <a href="#padaria">Padaria</a>
-          <a href="#quilombo">Quilombo São José</a>
-          <a href="#santo-antonio">Santo Antônio</a>
-          <a href="#marinho">Marinho</a>
-          <a href="#acaizal">Açaizal</a>
-          <a href="#iratapuru">Iratapuru</a>
-        </div>
-      </div>
-
+      <a href="sobre.html">Sobre</a>
+      <a href="roteiros.html#comunidades" class="active-link">Comunidades</a>
       <a href="galeria.html">Galeria</a>
-      <a href="contato.html">Contato</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contato.html" class="nav-btn">Contato</a>
     </nav>
 
     <div class="header-right">
@@ -54,279 +45,388 @@
 
 <!-- ROTEIROS DETALHADOS -->
 <section class="roteiros-section" id="destinos">
-  <h2>Nossas Rotas e Aventuras</h2>
-  <p class="secao-descricao">Explore o Vale do Jari com nossos roteiros exclusivos e detalhados.</p>
+  <h2>Nossos Roteiros e Experiências</h2>
+  <p class="secao-descricao">Explore em detalhes cada aventura e vivência que oferecemos no coração da Amazônia.</p>
 
   <!-- CACHOEIRA DE SANTO ANTÔNIO -->
-  <div class="roteiro-card">
+  <div id="rota-cachoeira" class="roteiro-card roteiro-principal">
+    <img src="img/paisagem.jpg" alt="Cachoeira de Santo Antônio" class="roteiro-card-img">
     <div class="roteiro-header">
       <h3>💧 Rota da Cachoeira</h3>
       <span class="badge-roteiro">Contemplação & Cultura</span>
     </div>
     
     <div class="roteiro-conteudo">
-      <p class="roteiro-descricao">
-        Imersão na história e cultura regional com experiência completa nas cachoeiras mais belas do Vale do Jari.
-        Foco em contemplação, história local e banhos revigorantes em águas cristalinas.
-      </p>
-      
-      <div class="roteiro-destaque">
-        <h4>🎯 Destino Principal</h4>
-        <p><strong>Cachoeira de Santo Antônio</strong> - Quedas de até 30 metros com cenários únicos</p>
-      </div>
+      <div class="roteiro-conteudo-grid">
+        <div class="roteiro-col-main">
+          <p class="roteiro-descricao">
+            Imersão na história e cultura regional com experiência completa nas cachoeiras mais belas do Vale do Jari.
+            Foco em contemplação, história local, fotos e banhos revigorantes.
+          </p>
+          
+          <div class="roteiro-tags">
+            <span class="tag tag-azul">Natureza</span>
+            <span class="tag tag-laranja">Fotografia</span>
+            <span class="tag">Banho</span>
+            <span class="tag tag-marrom">Cultura</span>
+          </div>
 
-      <div class="roteiro-info-grid">
-        <div class="info-roteiro">
-          <strong>💰 Investimento</strong>
-          <p>A partir de R$ 1.299,00</p>
-          <span class="por-pessoa">por pessoa</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>⏱️ Duração</strong>
-          <p>Dia completo</p>
-          <span class="por-pessoa">7-8 horas</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>📅 Saídas</strong>
-          <p>Programadas</p>
-          <span class="por-pessoa">Sábados e Domingos (vagas limitadas)</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>👥 Grupo</strong>
-          <p>Máximo 15 pessoas</p>
-          <span class="por-pessoa">para exclusividade</span>
-        </div>
-      </div>
+          <div class="roteiro-destaque">
+            <h4>🎯 Destino Principal</h4>
+            <p><strong>Cachoeira de Santo Antônio</strong> - Quedas de até 30 metros com cenários únicos</p>
+          </div>
 
-      <div class="roteiro-conteudo-detalhado">
-        <h4>✓ O que está incluído:</h4>
-        <ul class="lista-inclusos">
-          <li>Transporte local ida e volta</li>
-          <li>Visita à Comunidade Santo Antônio</li>
-          <li>Imersão na história e cultura local</li>
-          <li>Almoço regional autêntico preparado pelos moradores</li>
-          <li>Experiência completa na cachoeira</li>
-          <li>Tempo para banho, contemplação e fotos</li>
-          <li>Guia experiente local</li>
-          <li>Equipamento de segurança</li>
-        </ul>
-      </div>
-
-      <div class="roteiro-conteudo-detalhado">
-        <h4>🌊 Comunidades do Roteiro:</h4>
-        <ul class="lista-cachoeiras">
-          <li><strong>Santo Antônio:</strong> Principal - águas cristalinas, ideal para banho e lazer.</li>
-          <li><strong>Padaria:</strong> Secundária - cenário diversificado para contemplação.</li>
-          <li><strong>Quilombo São José:</strong> Parada opcional - história cultural e patrimonial única.</li>
-        </ul>
-      </div>
-
-      <div class="destaque-cta">
-        <p>✨ <strong>Experiência exclusiva com vagas limitadas</strong> - Reserve com antecedência!</p>
+          <div class="roteiro-conteudo-detalhado">
+            <h4>🌊 Comunidades do Roteiro:</h4>
+            <ul class="lista-cachoeiras">
+              <li><strong>Santo Antônio:</strong> Principal - águas geladas, ideal para banho e lazer.</li>
+              <li><strong>Padaria:</strong> Secundária - cenário diversificado para contemplação.</li>
+              <li><strong>Quilombo São José:</strong> Parada opcional - história cultural e patrimonial única.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="roteiro-col-aside">
+          <div class="roteiro-info-grid">
+            <div class="info-roteiro"><strong>💰 Investimento</strong><p>A partir de R$ 1.199,00</p><span class="por-pessoa">por pessoa</span></div>
+            <div class="info-roteiro"><strong>⏱️ Duração</strong><p>Dia completo</p><span class="por-pessoa">7-8 horas</span></div>
+            <div class="info-roteiro"><strong>👥 Grupo</strong><p>Máximo 15 pessoas</p><span class="por-pessoa">para exclusividade</span></div>
+          </div>
+          <div class="roteiro-conteudo-detalhado">
+            <h4>✓ O que está incluído:</h4>
+            <ul class="lista-inclusos">
+              <li>Transporte local ida e volta</li>
+              <li>Visita à Comunidade Santo Antônio</li>
+              <li>Imersão na história e cultura local</li>
+              <li>Almoço regional autêntico</li>
+              <li>Experiência completa na cachoeira</li>
+              <li>Guia experiente local</li>
+              <li>Bombeiros e Equipamentos de Segurança</li>
+            </ul>
+          </div>
+          <a href="index.html#contato" class="btn">Reservar Agora</a>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- ROTA DA TRILHA -->
-  <div class="roteiro-card">
+  <div id="rota-trilha" class="roteiro-card roteiro-principal">
+    <img src="img/42.jpg" alt="Trilha na floresta amazônica" class="roteiro-card-img">
     <div class="roteiro-header">
       <h3>🥾 Rota da Trilha</h3>
       <span class="badge-roteiro adventura">Aventura & Natureza</span>
     </div>
     
     <div class="roteiro-conteudo">
-      <p class="roteiro-descricao">
-        Aventura guiada pela floresta amazônica com natureza imersiva. Explore o dia a dia da mata nativa,
-        desde o nascer do sol até banhos revigorantes em rios cristalinos.
-      </p>
-      
-      <div class="roteiro-destaque">
-        <h4>📍 Ponto de Partida</h4>
-        <p><strong>Praça do bairro Nazaré Mineiro</strong> - Encontro às 5h30 da manhã</p>
-      </div>
-
-      <div class="roteiro-info-grid">
-        <div class="info-roteiro">
-          <strong>💰 Investimento</strong>
-          <p>R$ 1.299,00</p>
-          <span class="por-pessoa">por pessoa</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>⏱️ Duração</strong>
-          <p>Dia completo</p>
-          <span class="por-pessoa">8-10 horas</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>👥 Grupo</strong>
-          <p>Máximo 15 pessoas</p>
-          <span class="por-pessoa">guia especializado</span>
-        </div>
-        <div class="info-roteiro">
-          <strong>🎯 Dificuldade</strong>
-          <p>Moderado</p>
-          <span class="por-pessoa">preparação recomendada</span>
-        </div>
-      </div>
-
-      <div class="roteiro-conteudo-detalhado">
-        <h4>📋 Cronograma do Percurso:</h4>
-        <!-- Wrapper para criar a linha vertical contínua -->
-        <div style="border-left: 2px dashed #ddd; margin-left: 10px; padding-left: 10px;">
-          <div class="parada-trilha">
-            <h5>1️⃣ Mirante da Pedra do Amor</h5>
-            <p><strong>Horário:</strong> 6h-7h | <strong>Distância:</strong> 2 km da praça</p>
-            <ul>
-              <li>Chegada estratégica para apreciar o nascer do sol</li>
-              <li>Conectar-se com a natureza em momento contemplativo</li>
-              <li>Fotos marcantes com vista panorâmica</li>
-              <li>Briefing de segurança e orientações gerais</li>
-            </ul>
+      <div class="roteiro-conteudo-grid">
+        <div class="roteiro-col-main">
+          <p class="roteiro-descricao">
+            Aventura guiada pela floresta amazônica com natureza imersiva. Explore o dia a dia da mata nativa,
+            desde o nascer do sol até banhos revigorantes em rios cristalinos.
+          </p>
+          
+          <div class="roteiro-tags">
+            <span class="tag tag-azul">Natureza</span>
+            <span class="tag tag-laranja">Aventura</span>
+            <span class="tag">Trilha</span>
+            <span class="tag tag-marrom">Cultura</span>
           </div>
 
-          <div class="parada-trilha">
-            <h5>2️⃣ Trilha do Açaizal</h5>
-            <p><strong>Horário:</strong> 7h-11h | <strong>Trajeto:</strong> Leve a moderado</p>
-            <ul>
-              <li>Trajeto leve com cenários naturais incríveis</li>
-              <li>Pausa para café da manhã</li>
-              <li>Descanso na comunidade do Açaizal</li>
-              <li>Observação da flora e fauna local</li>
-            </ul>
+          <div class="roteiro-destaque">
+            <h4>📍 Ponto de Partida</h4>
+            <p><strong>Praça do bairro Nazaré Mineiro</strong> - Encontro às 5h30 da manhã</p>
           </div>
 
-          <div class="parada-trilha">
-            <h5>3️⃣ Comunidade Marinho</h5>
-            <p><strong>Horário:</strong> 11h-15h | <strong>Ambiente:</strong> Mata fechada imersiva</p>
-            <ul>
-              <li>Travessia pelas "Guardiãs da Floresta"</li>
-              <li>Trechos de mata fechada com ambiente totalmente imersivo</li>
-              <li>Almoço na comunidade do Marinho</li>
-              <li>Banho de rio para relaxar e recarregar energias</li>
+          <div class="roteiro-conteudo-detalhado">
+            <h4>📋 Cronograma do Percurso:</h4>
+            <ul class="lista-cachoeiras">
+              <li><strong>Mirante da Pedra do Amor (6h-7h):</strong> Chegada estratégica para apreciar o nascer do sol e conectar-se com a natureza.</li>
+              <li><strong>Trilha do Açaizal (7h-11h):</strong> Trajeto leve com cenários incríveis e pausa para café da manhã na comunidade.</li>
+              <li><strong>Comunidade Marinho (11h-15h):</strong> Travessia pela mata fechada, almoço na comunidade e um relaxante banho de rio.</li>
             </ul>
           </div>
         </div>
+        <div class="roteiro-col-aside">
+          <div class="roteiro-info-grid">
+            <div class="info-roteiro"><strong>💰 Investimento</strong><p>R$ 899,00</p><span class="por-pessoa">por pessoa</span></div>
+            <div class="info-roteiro"><strong>⏱️ Duração</strong><p>Dia completo</p><span class="por-pessoa">8-10 horas</span></div>
+            <div class="info-roteiro"><strong>👥 Grupo</strong><p>Máximo 15 pessoas</p><span class="por-pessoa">guia especializado</span></div>
+          </div>
+          <div class="roteiro-conteudo-detalhado">
+            <h4>✓ O que está incluído:</h4>
+            <ul class="lista-inclusos">
+              <li>Guia especializado na flora e fauna</li>
+              <li>Café da manhã e Almoço na comunidade</li>
+              <li>Modalidade veículo próprio</li>
+              <li>Taxas de visitação comunitária</li>
+              <li>Seguro aventura</li>
+            </ul>
+          </div>
+          <a href="index.html#contato" class="btn">Reservar Agora</a>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="roteiro-conteudo-detalhado">
-        <h4>✓ O que está incluído:</h4>
-        <ul class="lista-inclusos">
-          <li>Guia especializado na flora e fauna</li>
-          <li>Café da manhã e Almoço na comunidade</li>
-          <li>Taxas de visitação comunitária</li>
-          <li>Seguro aventura</li>
-        </ul>
+  <!-- OPERAÇÃO DE PESCA -->
+  <div id="rota-pesca" class="roteiro-card roteiro-principal">
+    <img src="img/rio.jpg" alt="Pesca no Rio Paru" class="roteiro-card-img">
+    <div class="roteiro-header">
+      <h3>🎣 Operação de Pesca – Rio Paru</h3>
+      <span class="badge-roteiro adventura">Pesca</span>
+    </div>
+    
+    <div class="roteiro-conteudo">
+      <div class="roteiro-conteudo-grid">
+        <div class="roteiro-col-main">
+          <p class="roteiro-descricao">
+            Uma expedição exclusiva para amantes da pesca esportiva nas águas selvagens do Rio Paru. Prepare-se para 6 dias de imersão total na natureza, com estrutura completa de acampamento e guias especializados em busca dos gigantes da Amazônia.
+          </p>
+          
+          <div class="roteiro-tags">
+            <span class="tag tag-laranja">Pesca</span>
+            <span class="tag tag-azul">Aventura</span>
+            <span class="tag">Acampamento</span>
+            <span class="tag tag-marrom">Natureza</span>
+          </div>
+
+          <div class="roteiro-destaque">
+            <h4>🎯 Destino Principal</h4>
+            <p><strong>Rio Paru</strong> - Um santuário de pesca preservado, conhecido por seus grandes tucunarés e outras espécies esportivas.</p>
+          </div>
+
+          <div class="roteiro-conteudo-detalhado">
+            <h4>🏕️ A Experiência</h4>
+            <p>Nossa operação de pesca é projetada para oferecer o máximo de conforto e eficiência. Navegaremos por trechos remotos do rio, com paradas estratégicas nos melhores pontos de pesca. As noites são em acampamentos montados pela nossa equipe, com toda a segurança e estrutura necessária.</p>
+          </div>
+        </div>
+        <div class="roteiro-col-aside">
+          <div class="roteiro-info-grid">
+            <div class="info-roteiro"><strong>💰 Investimento</strong><p>R$ 6.900,00</p><span class="por-pessoa">por pescador</span></div>
+            <div class="info-roteiro"><strong>⏱️ Duração</strong><p>6 dias</p><span class="por-pessoa">expedição completa</span></div>
+            <div class="info-roteiro"><strong>👥 Grupo</strong><p>Até 4 pescadores</p><span class="por-pessoa">para exclusividade</span></div>
+          </div>
+          <div class="roteiro-conteudo-detalhado">
+            <h4>✓ O que está incluído:</h4>
+            <ul class="lista-inclusos">
+              <li>Guias experientes</li>
+              <li>Embarcação</li>
+              <li>Combustível</li>
+              <li>Todas as refeições</li>
+              <li>Bebidas</li>
+              <li>Isca</li>
+              <li>Todo material para acampamento</li>
+              <li>Internet</li>
+              <li>Translado ida e volta na cidade</li>
+            </ul>
+          </div>
+          <a href="index.html#contato" class="btn">Reservar Agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IRATAPURU VIVO -->
+  <div id="rota-iratapuru-vivo" class="roteiro-card roteiro-principal">
+    <img src="img/ira.jpg" alt="Comunidade do Iratapuru" class="roteiro-card-img">
+    <div class="roteiro-header">
+      <h3>🌰 Iratapuru Vivo – Floresta, Rio e Saberes da Amazônia</h3>
+      <span class="badge-roteiro">Ecoturismo</span>
+    </div>
+    
+    <div class="roteiro-conteudo">
+      <div class="roteiro-conteudo-grid">
+        <div class="roteiro-col-main">
+          <p class="roteiro-descricao">
+            Viva uma imersão completa na Reserva de Desenvolvimento Sustentável do Rio Iratapuru, um santuário de biodiversidade e cultura. Este roteiro de Ecoturismo e Turismo de Base Comunitária combina a tranquilidade da floresta, a emoção do rio e a riqueza dos saberes tradicionais da comunidade, famosa pela produção da Castanha-do-Brasil.
+          </p>
+          
+          <div class="roteiro-tags">
+            <span class="tag tag-azul">Natureza</span>
+            <span class="tag tag-marrom">Cultura</span>
+            <span class="tag tag-laranja">Pesca</span>
+            <span class="tag">Aventura</span>
+          </div>
+
+          <div class="roteiro-destaque">
+            <h4>🗓️ Destaques do Roteiro</h4>
+            <p><strong>Dia 1:</strong> Chegada, visita à fábrica de castanha-do-brasil, jantar e roda de conversa cultural.</p>
+            <p><strong>Dia 2:</strong> Trilha ecológica pela floresta e pesca esportiva (pesque e solte) nas águas do Rio Iratapuru.</p>
+            <p><strong>Dia 3:</strong> Visita à fábrica artesanal de barcos, passeio de barco até as corredeiras do Funil e retorno fluvial.</p>
+          </div>
+
+          <div class="destaque-cta">
+            <p>Uma experiência autêntica de Turismo de Base Comunitária, onde sua visita contribui diretamente para a conservação e o desenvolvimento local.</p>
+          </div>
+        </div>
+        <div class="roteiro-col-aside">
+          <div class="roteiro-info-grid">
+            <div class="info-roteiro"><strong>💰 Investimento</strong><p>R$ 1.050 (2d) | R$ 1.650 (3d)</p><span class="por-pessoa">por pessoa</span></div>
+            <div class="info-roteiro"><strong>⏱️ Duração</strong><p>3 dias / 2 noites</p><span class="por-pessoa">ou 2 dias / 1 noite</span></div>
+            <div class="info-roteiro"><strong>👥 Grupo</strong><p>4 a 8 pessoas</p><span class="por-pessoa">Dificuldade: Moderado</span></div>
+          </div>
+          <div class="roteiro-conteudo-detalhado">
+            <h4>✓ O que está incluído:</h4>
+            <ul class="lista-inclusos">
+              <li>Hospedagem comunitária</li>
+              <li>Alimentação completa</li>
+              <li>Guias e condutores locais</li>
+              <li>Transporte fluvial</li>
+              <li>Taxa comunitária</li>
+            </ul>
+          </div>
+          <a href="index.html#contato" class="btn">Reservar Agora</a>
+        </div>
       </div>
     </div>
   </div>
 
 
   <!-- ================= SEÇÃO COMUNIDADES ================= -->
-  <div style="margin-top: 80px; margin-bottom: 40px; text-align: center;">
-    <h2>Destinos e Comunidades</h2>
+  <div id="comunidades" style="border-top: 1px solid #ddd; padding-top: 60px; margin-top: 80px; margin-bottom: 40px; text-align: center;">
+    <h2 style="font-size: 2.5rem;">Detalhes das Experiências</h2>
     <p class="secao-descricao">Conheça os lugares mágicos que compõem nossos roteiros.</p>
   </div>
 
+  <div class="communities-grid">
   <!-- COMUNIDADE SANTO ANTÔNIO -->
-  <div id="santo-antonio" class="roteiro-card comunidade-card" style="border-left: 5px solid var(--azul);">
-    <img src="img/santo antonio.png" alt="Cachoeira de Santo Antônio" class="roteiro-card-img">
-    <div class="roteiro-conteudo">
-      <h3 style="color: var(--azul); margin-bottom: 15px;">🌊 Comunidade e Cachoeira de Santo Antônio</h3>
-      <p class="roteiro-descricao">
-        Localizada no coração de Laranjal do Jari (AP), a Cachoeira de Santo Antônio é um dos atrativos naturais mais impressionantes da Amazônia brasileira. Formada por quedas d’água de cerca de 30 metros de altura, essa paisagem exuberante integra a exuberante vegetação da floresta e o curso do Rio Jari, criando um cenário selvagem e inspirador para quem busca contato profundo com a natureza.
+  <article id="santo-antonio" class="experience-detail-card experience-detail-card--azul">
+    <div class="experience-detail-card__image-wrapper">
+      <img src="img/santo antonio.png" alt="Cachoeira de Santo Antônio" class="experience-detail-card__image">
+    </div>
+    <div class="experience-detail-card__content">
+      <h3 class="experience-detail-card__title">🌊 Comunidade e Cachoeira de Santo Antônio</h3>
+      <div class="experience-detail-card__tags">
+        <span class="tag">Natureza</span>
+        <span class="tag">Cachoeira</span>
+        <span class="tag">Aventura</span>
+      </div>
+      <p class="experience-detail-card__description">
+        Localizada em Laranjal do Jari (AP), a Cachoeira de Santo Antônio impressiona com quedas de 30 metros. A paisagem une a força do Rio Jari à floresta amazônica, criando um cenário selvagem perfeito para quem busca conexão com a natureza.
       </p>
-      <div class="roteiro-destaque">
+      <div class="experience-detail-card__highlights">
         <h4>O que você vai viver aqui:</h4>
-        <ul style="padding-left: 20px; margin: 0; color: #444;">
-          <li style="margin-bottom: 5px;">Passeio fluvial pelo Rio Jari até a área da cachoeira</li>
-          <li style="margin-bottom: 5px;">Trilha leve e panorâmica até o mirante natural (vista ampla do entorno)</li>
-          <li style="margin-bottom: 5px;">Banho nas águas cristalinas da cachoeira, em ambiente natural</li>
-          <li style="margin-bottom: 5px;">Almoço regional preparado com ingredientes locais, celebrando a culinária da Amazônia</li>
-          <li>Acompanhamento profissional e atenção a cada detalhe da jornada</li>
-        </ul>
+        <p>Durante a visita, você vai desfrutar de um passeio de barco pelo Rio Jari até a cachoeira, seguido de uma trilha leve com vista panorâmica do entorno. O ponto alto é o banho nas águas cristalinas em plena natureza amazônica, com almoço regional preparado com ingredientes locais e acompanhamento profissional em cada etapa da experiência.</p>
       </div>
     </div>
-  </div>
+  </article>
 
   <!-- COMUNIDADE PADARIA -->
-  <div id="padaria" class="roteiro-card comunidade-card" style="border-left: 5px solid var(--laranja);">
-    <img src="img/pada.jpg" alt="Comunidade de Padaria e Catraias" class="roteiro-card-img">
-    <div class="roteiro-conteudo">
-      <h3 style="color: var(--laranja); margin-bottom: 15px;">🛶 Comunidade de Padaria</h3>
-      <p class="roteiro-descricao">
+  <article id="padaria" class="experience-detail-card experience-detail-card--laranja">
+    <div class="experience-detail-card__image-wrapper">
+      <img src="img/pada.jpg" alt="Comunidade de Padaria e Catraias" class="experience-detail-card__image">
+    </div>
+    <div class="experience-detail-card__content">
+      <h3 class="experience-detail-card__title">🛶 Comunidade de Padaria</h3>
+      <div class="experience-detail-card__tags">
+        <span class="tag">Ribeirinho</span>
+        <span class="tag">Cultura</span>
+        <span class="tag">Fronteira</span>
+      </div>
+      <p class="experience-detail-card__description">
         A Padaria não é apenas um ponto de parada; é onde o tempo desacelera para seguir o ritmo das águas. Este vilarejo ribeirinho, com suas casas coloridas e catraias dançando na correnteza, é o guardião das fronteiras entre o Amapá e o Pará. É aqui que a aventura ganha alma, entre sorrisos hospitaleiros e o aroma de peixe fresco, oferecendo uma autêntica imersão no modo de vida caboclo.
       </p>
-      <div class="roteiro-destaque">
+      <div class="experience-detail-card__highlights">
         <h4>O que você vai viver aqui:</h4>
-        <p>Uma imersão autentica no modo de vida ribeirinho, sinta a hospitalidade e viva a experiência de navegar o Rio Jari em sua forma mais pura.</p>
+        <p>Uma imersão autêntica no modo de vida ribeirinho, sinta a hospitalidade e viva a experiência de navegar o Rio Jari em sua forma mais pura.</p>
       </div>
     </div>
-  </div>
+  </article>
 
   <!-- QUILOMBO SÃO JOSÉ -->
-  <div id="quilombo" class="roteiro-card comunidade-card" style="border-left: 5px solid var(--verde-escuro);">
-    <img src="img/quilombo_sao_jose.jpg" alt="Cultura do Quilombo São José" class="roteiro-card-img">
-    <div class="roteiro-conteudo">
-      <h3 style="color: var(--verde-escuro); margin-bottom: 15px;">🥁 Quilombo São José</h3>
-      <p class="roteiro-descricao">
+  <article id="quilombo" class="experience-detail-card experience-detail-card--verde-escuro">
+    <div class="experience-detail-card__image-wrapper">
+      <img src="img/quilombo_sao_jose.jpg" alt="Cultura do Quilombo São José" class="experience-detail-card__image">
+    </div>
+    <div class="experience-detail-card__content">
+      <h3 class="experience-detail-card__title">🥁 Quilombo São José</h3>
+      <div class="experience-detail-card__tags">
+        <span class="tag">Ancestralidade</span>
+        <span class="tag">História</span>
+        <span class="tag">Cultura</span>
+      </div>
+      <p class="experience-detail-card__description">
         Pisando em solo sagrado de resistência e liberdade, o Quilombo São José é um tesouro vivo de ancestralidade. Aqui, as raízes afro-amazônicas não estão nos livros, mas no toque do tambor, na dança do Marabaixo e na sabedoria dos mais velhos. Visitar o quilombo é uma jornada espiritual e cultural, um convite para reconectar-se com a história profunda do Brasil e celebrar a força de um povo que preserva sua identidade com orgulho.
       </p>
-      <div class="roteiro-destaque">
+      <div class="experience-detail-card__highlights">
         <h4>O que você vai viver aqui:</h4>
         <p>Imersão cultural, rodas de conversa sobre a história local, contato com a agricultura familiar e, em datas festivas, o som contagiante do Marabaixo.</p>
       </div>
     </div>
-  </div>
+  </article>
 
   <!-- COMUNIDADE MARINHO -->
-  <div id="marinho" class="roteiro-card comunidade-card" style="border-left: 5px solid var(--verde);">
-    <img src="img/marinho.png" alt="Natureza na Comunidade do Marinho" class="roteiro-card-img">
-    <div class="roteiro-conteudo">
-      <h3 style="color: var(--verde); margin-bottom: 15px;">🌿 Comunidade do Marinho</h3>
-      <p class="roteiro-descricao">
+  <article id="marinho" class="experience-detail-card experience-detail-card--verde">
+    <div class="experience-detail-card__image-wrapper">
+      <img src="img/marinho.png" alt="Natureza na Comunidade do Marinho" class="experience-detail-card__image">
+    </div>
+    <div class="experience-detail-card__content">
+      <h3 class="experience-detail-card__title">🌿 Comunidade do Marinho</h3>
+      <div class="experience-detail-card__tags">
+        <span class="tag">Ecoturismo</span>
+        <span class="tag">Natureza</span>
+        <span class="tag">Igarapé</span>
+      </div>
+      <p class="experience-detail-card__description">
         O Marinho é o santuário do silêncio e da biodiversidade, o verdadeiro coração pulsante da floresta. Longe de tudo, aqui você se torna parte da mata. É o destino para quem busca não apenas ver a Amazônia, mas respirá-la. Entre árvores centenárias e igarapés de águas puras, a comunidade vive em simbiose com a selva, oferecendo uma experiência de ecoturismo raiz que transforma a maneira como enxergamos o mundo.
       </p>
-      <div class="roteiro-destaque">
+      <div class="experience-detail-card__highlights">
         <h4>O que você vai viver aqui:</h4>
-        <p>Trilhas interpretativas, observação de pássaros e fauna silvestre, almoço delicioso, banhos de igarapé e a paz absoluta que só o interior da Amazônia oferece.</p>
+        <p>Trilhas interpretativas, fauna silvestre, almoço delicioso, banhos de igarapé e a paz absoluta que só o interior da Amazônia oferece.</p>
       </div>
     </div>
-  </div>
+  </article>
 
   <!-- COMUNIDADE AÇAIZAL -->
-  <div id="acaizal" class="roteiro-card comunidade-card" style="border-left: 5px solid #6f2da8;">
-    <img src="img/açaizal.PNG" alt="Colheita de Açaí no Açaizal" class="roteiro-card-img">
-    <div class="roteiro-conteudo">
-      <h3 style="color: #6f2da8; margin-bottom: 15px;">🍇 Comunidade do Açaizal</h3>
-      <p class="roteiro-descricao">
+  <article id="acaizal" class="experience-detail-card experience-detail-card--roxo">
+    <div class="experience-detail-card__image-wrapper">
+      <img src="img/açaizal.PNG" alt="Colheita de Açaí no Açaizal" class="experience-detail-card__image">
+    </div>
+    <div class="experience-detail-card__content">
+      <h3 class="experience-detail-card__title">🍇 Comunidade do Açaizal</h3>
+      <div class="experience-detail-card__tags">
+        <span class="tag">Bioeconomia</span>
+        <span class="tag">Trilha</span>
+        <span class="tag">Comunidade</span>
+      </div>
+      <p class="experience-detail-card__description">
         Descubra um lado da Amazônia que poucos conhecem. Na Comunidade do Açaizal, você entra em contato direto com a floresta produtiva, explorando áreas de cultivo de açaí e castanha em meio a paisagens naturais preservadas. Uma experiência autêntica, guiada por quem vive a floresta todos os dias; simples, verdadeira e inesquecível.
       </p>
-      <div class="roteiro-destaque">
+      <div class="experience-detail-card__highlights">
         <h4>O que você vai viver aqui:</h4>
         <p>Trilhas leves pela mata, visita às plantações de açaí e castanha, conexão com a rotina da comunidade e uma imersão real na Amazônia além do turismo comum.</p>
       </div>
     </div>
-  </div>
+  </article>
 
   <!-- COMUNIDADE IRATAPURU -->
-  <div id="iratapuru" class="roteiro-card comunidade-card" style="border-left: 5px solid var(--marrom);">
-    <img src="img/ira.jpg" alt="Reserva do Iratapuru" class="roteiro-card-img">
-    <div class="roteiro-conteudo">
-      <h3 style="color: var(--marrom); margin-bottom: 15px;">🌰 Comunidade do Iratapuru</h3>
-      <p class="roteiro-descricao">
+  <article id="iratapuru" class="experience-detail-card experience-detail-card--marrom">
+    <div class="experience-detail-card__image-wrapper">
+      <img src="img/ira.jpg" alt="Reserva do Iratapuru" class="experience-detail-card__image">
+    </div>
+    <div class="experience-detail-card__content">
+      <h3 class="experience-detail-card__title">🌰 Comunidade do Iratapuru</h3>
+      <div class="experience-detail-card__tags">
+        <span class="tag">Sustentabilidade</span>
+        <span class="tag">Castanha-do-Brasil</span>
+        <span class="tag">Reserva</span>
+      </div>
+      <p class="experience-detail-card__description">
         Referência mundial em harmonia entre homem e natureza. Famosa pela produção da Castanha-do-Brasil, a comunidade oferece uma experiência única de ecoturismo, onde você conhece o processo produtivo sustentável e se encanta com a grandiosidade da Reserva de Desenvolvimento Sustentável do Rio Iratapuru.
       </p>
-      <div class="roteiro-destaque">
+      <div class="experience-detail-card__highlights">
         <h4>O que você vai viver aqui:</h4>
         <p>Visita à fábrica de beneficiamento de castanha, trilhas na reserva, banho nas águas do Rio Iratapuru e vivência com produtores locais.</p>
       </div>
     </div>
+  </article>
   </div>
 
   <!-- PERSONALIZAR ROTEIRO -->
   <div class="personalizar-roteiro">
     <h3>Não encontrou o roteiro ideal?</h3>
     <p>Entre em contato conosco para montarmos um roteiro personalizado e exclusivo, feito sob medida para você.</p>
-    <a href="contato.html" class="btn">Personalizar Roteiro</a>
+    <a href="index.html#contato" class="btn">Personalizar Roteiro</a>
   </div>
 
   <div style="text-align: center; margin-top: 40px;">
@@ -341,17 +441,34 @@
   💬
 </a>
 
+<!-- BOTÃO VOLTAR AO TOPO -->
+<button id="back-to-top" aria-label="Voltar ao topo">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-
     <div class="footer-col footer-links">
       <h4>Links rápidos</h4>
       <ul>
         <li><a href="index.html">Início</a></li>
-        <li><a href="roteiros.html">Destinos</a></li>
+        <li><a href="roteiros.html">Destinos</a></li> 
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="index.html#pacotes-turisticos">Pacotes</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-destinos">
+      <h4>Destinos Populares</h4>
+      <ul>
+        <li><a href="roteiros.html#santo-antonio">Cachoeira de Santo Antônio</a></li>
+        <li><a href="roteiros.html#rota-trilha">Trilha da Floresta Tropical</a></li>
+        <li><a href="roteiros.html#padaria">Comunidade de Padaria</a></li>
+        <li><a href="roteiros.html#quilombo">Quilombo São José</a></li>
+        <li><a href="roteiros.html#comunidades">Comunidades</a></li>
       </ul>
     </div>
 
@@ -360,43 +477,49 @@
       <ul>
         <li class="contact-item">
           <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           </span>
-          <span> Laranjal do Jari - AP</span>
+          <a href="https://www.google.com/maps/place/Laranjal+do+Jari+-+AP" target="_blank" rel="noopener noreferrer"> Laranjal do Jari - AP</a>
         </li>
         <li class="contact-item">
           <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15.46a2 2 0 0 1-2.18.54 11.36 11.36 0 0 1-5.21-3.38 11.36 11.36 0 0 1-3.38-5.21A2 2 0 0 1 11 5h2a2 2 0 0 1 2 1.72c.07.89.3 1.76.65 2.56a2 2 0 0 1-.45 2.12L14 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </span>
-          <a href="https://wa.me/5596991152676" target="_blank">(96) 99115-2676</a>
+          <a href="tel:+5596991152676">(96) 99115-2676</a>
         </li>
         <li class="contact-item">
           <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6.5l-9 6-9-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
           </span>
           <a href="mailto:valetripjari@gmail.com">valetripjari@gmail.com</a>
         </li>
-        <li class="contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.4"/><path d="M16 11.37A4 4 0 1 1 12.63 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <a href="https://instagram.com/valetripjari" target="_blank">@valetripjari</a>
-        </li>
       </ul>
-    </div>
-
-    <div class="footer-col footer-about">
-      <h3>Vale Trip Jari</h3>
-      <p>Conectamos você às paisagens mais incríveis da Amazônia.<br>Experiências autênticas, seguras e memoráveis.</p>
+      <div class="footer-social-icons">
+        <a href="https://facebook.com/valetripjari" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/valetripjari" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c2.71 0 3.05.01 4.12.06 1.07.05 1.75.22 2.22.41.6.25 1.09.58 1.59 1.08.5.5.83.99 1.08 1.59.19.47.36 1.15.41 2.22.05 1.07.06 1.41.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.75-.41 2.22-.25.6-.58 1.09-1.08 1.59-.5.5-.99.83-1.59 1.08-.47.19-1.15.36-2.22.41-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.75-.22-2.22-.41-.6-.25-1.09-.58-1.59-1.08-.5-.5-.83-.99-1.08-1.59-.19-.47-.36-1.15-.41-2.22-.05-1.07-.06-1.41-.06-4.12s.01-3.05.06-4.12c.05-1.07.22-1.75.41 2.22.25.6.58 1.09 1.08 1.59.5.5.99.83 1.59 1.08.47.19 1.15.36 2.22.41C8.95 2.01 9.29 2 12 2zm0 2c-2.67 0-3 .01-4.04.06-1.02.05-1.4.21-1.73.35-.45.15-.78.34-1.09.65-.31.31-.5.64-.65 1.09-.14.33-.3.71-.35 1.73-.05 1.04-.06 1.37-.06 4.04s.01 3 .06 4.04c.05 1.02.21 1.4.35 1.73.15.45.34.78.65 1.09.31.31.64.5 1.09.65.33.14.71.3 1.73.35 1.04.05 1.37.06 4.04.06s3-.01 4.04-.06c1.02-.05 1.4-.21 1.73-.35.45-.15.78-.34 1.09-.65.31-.31-.5-.64.65-1.09.14-.33.3-.71.35-1.73.05-1.04.06-1.37.06-4.04s-.01-3-.06-4.04c-.05-1.02-.21-1.4-.35-1.73-.15-.45-.34-.78-.65-1.09-.31-.31-.64-.5-1.09-.65-.33-.14-.71-.3-1.73-.35C15 4.01 14.67 4 12 4zm0 3.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm6.5-2.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+        </a>
+        <a href="https://twitter.com/valetripjari" target="_blank" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+        </a>
+        <a href="https://youtube.com/valetripjari" target="_blank" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2C5.12 19.5 12 19.5 12 19.5s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33zM9.75 15.02V8.48L15 11.75l-5.25 3.27z"/></svg>
+        </a>
+      </div>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Vale Trip Jari • Todos os direitos reservados</p>
+    <p>© 2026 Vale Trip Jari. Todos os direitos reservados.</p>
+    <div class="footer-legal-links">
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
+      <a href="termos-de-uso.html">Termos de Uso</a>
+    </div>
   </div>
 </footer>
 
 <script src="js/script.js"></script>
 </body>
-</html>

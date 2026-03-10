@@ -3,24 +3,36 @@ document.addEventListener('DOMContentLoaded', function() {
   // ========== MENU MOBILE ==========
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('menu');
+  const body = document.body;
+  const closeMenuBtn = document.querySelector('.close-menu-btn');
 
   if (menuToggle && menu) {
+    const closeMenu = () => {
+      menu.classList.remove('active');
+      body.classList.remove('menu-open');
+    };
+
     menuToggle.addEventListener('click', function(e) {
       e.stopPropagation();
       menu.classList.toggle('active');
+      body.classList.toggle('menu-open');
     });
+
+    // Fechar menu ao clicar no botão 'X'
+    if (closeMenuBtn) {
+      closeMenuBtn.addEventListener('click', closeMenu);
+    }
 
     // Fechar menu ao clicar em um link
     document.querySelectorAll('nav a:not(.dropbtn)').forEach(link => {
-      link.addEventListener('click', function() {
-        menu.classList.remove('active');
-      });
+      link.addEventListener('click', closeMenu);
     });
 
     // Fechar menu ao clicar fora
     document.addEventListener('click', function(e) {
-      if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
-        menu.classList.remove('active');
+      // Verifica se o menu está ativo antes de tentar fechar
+      if (menu.classList.contains('active') && !e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+        closeMenu();
       }
     });
   }
@@ -104,6 +116,31 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // ========== GALLERY FILTER ==========
+  const filterButtons = document.querySelectorAll('.filtro-btn');
+  const galleryItems = document.querySelectorAll('.galeria-item');
+
+  if (filterButtons.length > 0 && galleryItems.length > 0) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Set active button state
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        const filterValue = this.getAttribute('data-filter');
+
+        galleryItems.forEach(item => {
+          const itemCategory = item.getAttribute('data-category');
+          if (filterValue === 'all' || filterValue === itemCategory) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
   // ========== SMOOTH SCROLL ==========
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -126,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
     threshold: 0.1 // Trigger when 10% of the element is visible
   });
 
-  const animatedElements = document.querySelectorAll('.sobre-texto, .sobre-img, .roteiros-section h2, .secao-descricao');
+  const animatedElements = document.querySelectorAll('.sobre-texto, .sobre-img, .roteiros-section h2, .secao-descricao, .roteiro-card');
   animatedElements.forEach((el) => observer.observe(el));
 
   // ========== FORMULÁRIO DE CONTATO (AJAX) ==========
@@ -153,29 +190,168 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .then(response => {
         if (response.ok) {
-          // Substitui o conteúdo do container do formulário pela mensagem
-          const formContainer = document.querySelector('.form-container');
+          const formContainer = document.querySelector('.contato-form-col');
           formContainer.innerHTML = `
             <div style="text-align: center; padding: 30px 20px;">
               <div style="font-size: 4rem; margin-bottom: 15px;">✅</div>
-              <h3 style="color: var(--azul); margin-bottom: 10px;">Mensagem Enviada!</h3>
-              <p style="color: #555; font-size: 1.1rem;">Obrigado pelo contato. Recebemos sua mensagem e retornaremos em breve.</p>
-              <button onclick="location.reload()" class="btn" style="margin-top: 25px;">Enviar nova mensagem</button>
+              <h3 style="color: var(--azul); margin-bottom: 10px;">Mensagem Enviada com Sucesso!</h3>
+              <p style="color: var(--text-color); font-size: 1.1rem;">Agradecemos seu contato. Em breve retornaremos!</p>
             </div>
           `;
-          formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-          alert('Ocorreu um erro ao enviar. Tente novamente.');
-          btn.innerText = originalText;
-          btn.disabled = false;
-          btn.style.opacity = '1';
+          alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
         }
       })
       .catch(error => {
-        alert('Erro de conexão. Verifique sua internet.');
+        console.error('Erro:', error);
+        alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+      })
+      .finally(() => {
         btn.innerText = originalText;
         btn.disabled = false;
         btn.style.opacity = '1';
+      });
+    });
+  }
+
+  // ========== CAROUSEL PARCERIAS ==========
+  const track = document.getElementById('track');
+  if (track) {
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const dotsContainer = document.getElementById('dotsContainer');
+    const cards = document.querySelectorAll('.sponsor-card');
+    
+    let currentIndex = 0;
+    const totalItems = cards.length;
+    let autoPlayInterval;
+
+    function getVisibleItems() {
+      if (window.innerWidth <= 600) return 2;
+      if (window.innerWidth <= 992) return 3;
+      return 5;
+    }
+
+    function updateCarousel() {
+      const visibleItems = getVisibleItems();
+      const cardWidth = track.offsetWidth / visibleItems;
+      const maxIndex = totalItems - visibleItems;
+      
+      if (currentIndex > maxIndex) currentIndex = 0;
+      if (currentIndex < 0) currentIndex = maxIndex;
+
+      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      updateDots(visibleItems);
+    }
+
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      const visibleItems = getVisibleItems();
+      const maxIndex = totalItems - visibleItems;
+      
+      for (let i = 0; i <= maxIndex; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('dot');
+        if (i === currentIndex) dot.classList.add('active');
+        
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateCarousel();
+          resetAutoPlay();
+        });
+        
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function moveNext() {
+      currentIndex++;
+      updateCarousel();
+    }
+
+    function movePrev() {
+      currentIndex--;
+      updateCarousel();
+    }
+
+    if (btnNext) btnNext.addEventListener('click', () => { moveNext(); resetAutoPlay(); });
+    if (btnPrev) btnPrev.addEventListener('click', () => { movePrev(); resetAutoPlay(); });
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(moveNext, 3000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    window.addEventListener('resize', () => {
+      createDots();
+      updateCarousel();
+    });
+
+    createDots();
+    startAutoPlay();
+  }
+
+  // ========== COOKIE CONSENT (LGPD) ==========
+  if (!localStorage.getItem('cookieConsent')) {
+    const cookieBanner = document.createElement('div');
+    cookieBanner.className = 'cookie-banner';
+    cookieBanner.innerHTML = `
+      <div class="cookie-content">
+        <p>Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
+      </div>
+      <button id="accept-cookies" class="btn">Aceitar</button>
+    `;
+    
+    document.body.appendChild(cookieBanner);
+    
+    // Delay para animação de entrada suave
+    setTimeout(() => {
+      cookieBanner.classList.add('show');
+    }, 1000);
+
+    const acceptBtn = document.getElementById('accept-cookies');
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'true');
+        cookieBanner.classList.remove('show');
+        setTimeout(() => {
+          cookieBanner.remove();
+        }, 500); // Aguarda a transição CSS terminar antes de remover do DOM
+      });
+    }
+  }
+
+  // ========== BACK TO TOP BUTTON ==========
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
   }

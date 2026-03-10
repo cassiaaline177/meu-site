@@ -6,6 +6,9 @@
   <meta name="description" content="Descubra o Vale do Jari com a Vale Trip Jari. Roteiros guiados para a Cachoeira de Santo Antônio, trilhas na Amazônia e turismo comunitário em Laranjal do Jari (AP). Aventura com segurança e conforto.">
   <title>Vale Trip Jari</title>
 
+  <link rel="icon" href="img/logo.png.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/logo.png.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
@@ -17,28 +20,16 @@
 <header class="header">
   <div class="nav-container">
 
-    <a href="index.html" class="logo-container">
-      <img src="img/logo.png.png" class="logo" alt="Vale Trip Jari">
-    </a>
+    <a href="index.html" class="logo-container"><img src="img/logo_branca.png" alt="Logo Vale Trip Jari" class="logo"></a>
 
     <nav id="menu">
-      <a href="#inicio">Início</a>
-      <a href="#sobre">Sobre</a>
-
-      <div class="dropdown">
-        <a href="roteiros.html#destinos" class="dropbtn">Comunidades</a>
-        <div class="dropdown-content">
-          <a href="roteiros.html#padaria">Padaria</a>
-          <a href="roteiros.html#quilombo">Quilombo São José</a>
-          <a href="roteiros.html#santo-antonio">Santo Antônio</a>
-          <a href="roteiros.html#marinho">Marinho</a>
-          <a href="roteiros.html#acaizal">Açaizal</a>
-          <a href="roteiros.html#iratapuru">Iratapuru</a>
-        </div>
-      </div>
-
+      <button class="close-menu-btn" aria-label="Fechar Menu">&times;</button>
+      <a href="index.html" class="active-link">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="roteiros.html#comunidades">Comunidades</a>
       <a href="galeria.html">Galeria</a>
-      <a href="contato.html">Contato</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contato.html" class="nav-btn">Contato</a>
     </nav>
 
     <div class="header-right">
@@ -55,61 +46,173 @@
 <!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-content">
-    <h1>Sua próxima aventura começa aqui</h1>
-    <p>Expolore o melhor do Vale do Jari com roteiros guiados, experiências inesquecíveis e segurança.</p>
-    <a href="roteiros.html" class="btn">Ver roteiros</a>
+    <a href="#contato" class="hero-location">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+      <span>Laranjal do Jari - Amapá</span>
+    </a>
+
+    <h1>Descubra o Paraíso Amazônico</h1>
+    <p>Aventura, cultura e natureza te esperam no coração do Vale do Jari. Experiências únicas com segurança e conforto.</p>
+
+    <div class="hero-buttons">
+      <a href="#pacotes-turisticos" class="btn">Explorar Pacotes</a>
+      <a href="roteiros.html" class="btn btn-outline">Ver Destinos</a>
+    </div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-  <div class="sobre-container">
-
-    <div class="sobre-texto">
-      <h2>Sobre a Vale Trip Jari</h2>
-      <p>
-        A Vale Trip Jari oferece experiências completas para quem quer explorar o melhor do Vale do Jari com segurança, organização e praticidade. Trabalhamos com roteiros guiados para cachoeiras, trilhas e paisagens naturais incríveis, pensados para proporcionar conforto, aventura e tranquilidade em cada etapa.
-      </p>
-
-      <p>
-        Cuidamos de tudo para você aproveitar ao máximo: planejamento, acompanhamento e suporte do início ao fim. Ideal para quem quer viver a natureza sem preocupação e com total confiança.
-      </p>
-
-      <p>
-        Reserve sua experiência e descubra por que cada viagem com a Vale Trip Jari se transforma em uma lembrança inesquecível.
-      </p>
-    </div>
-
-    <div class="sobre-img">
-      <img src="img/sobre.jpg" alt="Turismo no Vale do Jari">
-    </div>
-
+<!-- DESTINOS POPULARES -->
+<section class="popular-destinos">
+  <h2>Destinos Populares</h2>
+  <div class="destinos-grid">
+    <!-- Card 1 -->
+    <a href="roteiros.html#santo-antonio" class="destino-card">
+      <img src="img/cacho_roteiro.jpg" alt="Cachoeira de Santo Antônio">
+      <span class="destino-badge badge-laranja">Aventura</span>
+      <div class="destino-card-content">
+        <div class="destino-location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+          <span>Laranjal do Jari, AP</span>
+        </div>
+        <h3>Cachoeira de Santo Antônio</h3>
+        <p class="destino-descricao">Quedas d'água impressionantes e piscinas naturais em um cenário de pura beleza amazônica.</p>
+      </div>
+    </a>
+    <!-- Card 3 -->
+    <a href="roteiros.html#marinho" class="destino-card">
+      <img src="img/marinho.png" alt="Comunidade do Marinho">
+      <span class="destino-badge badge-azul">Cultural</span>
+      <div class="destino-card-content">
+        <div class="destino-location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+          <span>Interior de Laranjal do Jari</span>
+        </div>
+        <h3>Comunidade do Marinho</h3>
+        <p class="destino-descricao">Um refúgio de paz e natureza, ideal para trilhas leves e banhos em igarapés de águas cristalinas.</p>
+      </div>
+    </a>
+    <!-- Card 6 -->
+    <a href="roteiros.html#padaria" class="destino-card">
+      <img src="img/pada.jpg" alt="Comunidade de Padaria">
+      <span class="destino-badge badge-azul">Ribeirinho</span>
+      <div class="destino-card-content">
+        <div class="destino-location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+          <span>Rio Jari, Divisa AP/PA</span>
+        </div>
+        <h3>Comunidade de Padaria</h3>
+        <p class="destino-descricao">Vivencie o autêntico modo de vida ribeirinho na fronteira entre Amapá e Pará.</p>
+      </div>
+    </a>
   </div>
 </section>
 
-<!-- ROTEIROS (PREVIEW) -->
-<section class="roteiros-section" id="destinos">
+<!-- EXPERIÊNCIAS EM DESTAQUE -->
+<section class="experiencias-section" id="experiencias">
   <h2>Nossas Rotas e Aventuras</h2>
-  <p class="secao-descricao">Confira algumas das experiências que preparamos para você.</p>
+  <p class="secao-descricao">Criamos experiências que conectam você com a verdadeira essência da Amazônia.</p>
 
-  <div class="cards">
-    <div class="card">
-      <img src="img/paisagem.jpg" alt="Cachoeira de Santo Antônio">
-      <h3>Cachoeira de Santo Antônio</h3>
-      <p>Águas cristalinas e cenário perfeito para relaxar.</p>
-    </div>
-    <div class="card">
-      <img src="img/trilha.jpg" alt="Trilhas ecológicas">
-      <h3>Trilhas na mata</h3>
-      <p>Aventura guiada com conexão real com a natureza.</p>
-    </div>
-    <div class="card">
-      <img src="img/rio.jpg" alt="Paisagens naturais">
-      <h3>Paisagens incríveis</h3>
-      <p>Mirantes naturais e cenários únicos da região.</p>
-    </div>
+  <div class="experience-grid">
+    <!-- Card 1: Rota da Cachoeira -->
+    <article class="experience-card">
+      <a href="roteiros.html#rota-cachoeira" class="experience-card__image-link">
+        <img src="img/hero.jpg" alt="Pessoas se banhando na Cachoeira de Santo Antônio" class="experience-card__image">
+      </a>
+      <div class="experience-card__content">
+        <div class="experience-card__location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+          <span>Laranjal do Jari, AP</span>
+        </div>
+        <h3 class="experience-card__title"><a href="roteiros.html#rota-cachoeira">Rota da Cachoeira</a></h3>
+        <div class="experience-card__tags">
+          <span class="tag">💧 Banho de Rio</span><span class="tag">🍽 Gastronomia</span><span class="tag">🛶 Passeio</span>
+        </div>
+        <p class="experience-card__description">Uma imersão na cultura local com um banho revigorante nas quedas da Cachoeira de Santo Antônio.</p>
+        <div class="experience-card__footer">
+          <div class="experience-card__price">
+            <p>A partir de</p><strong>R$ 1.199,99</strong>
+          </div>
+          <div class="experience-card__buttons">
+            <a href="roteiros.html#rota-cachoeira" class="btn btn-secondary">Ver Detalhes</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2: Rota da Trilha -->
+    <article class="experience-card">
+      <a href="roteiros.html#rota-trilha" class="experience-card__image-link">
+        <img src="img/42.jpg" alt="Trilha densa na floresta amazônica" class="experience-card__image">
+      </a>
+      <div class="experience-card__content">
+        <div class="experience-card__location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+          <span>Região de Laranjal do Jari</span>
+        </div>
+        <h3 class="experience-card__title"><a href="roteiros.html#rota-trilha">Rota da Trilha na Selva</a></h3>
+        <div class="experience-card__tags">
+          <span class="tag">🥾 Trilha</span><span class="tag">🌿 Natureza</span><span class="tag">🐒 Fauna</span>
+        </div>
+        <p class="experience-card__description">Aventura guiada pela floresta, explorando a biodiversidade e os sons da mata nativa.</p>
+        <div class="experience-card__footer">
+          <div class="experience-card__price">
+            <p>A partir de</p><strong>R$ 899,00</strong>
+          </div>
+          <div class="experience-card__buttons">
+            <a href="roteiros.html#rota-trilha" class="btn btn-secondary">Ver Detalhes</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3: Operação de Pesca -->
+    <article class="experience-card">
+      <a href="roteiros.html#rota-pesca" class="experience-card__image-link">
+        <img src="img/pesca.jpg" alt="Pesca esportiva no Rio Paru" class="experience-card__image">
+      </a>
+      <div class="experience-card__content">
+        <div class="experience-card__location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+          <span>Rio Paru, PA</span>
+        </div>
+        <h3 class="experience-card__title"><a href="roteiros.html#rota-pesca">Operação de Pesca – Rio Paru</a></h3>
+        <div class="experience-card__tags">
+          <span class="tag">🎣 Pesca</span><span class="tag">🏕️ Acampamento</span><span class="tag">🏞️ Aventura</span>
+        </div>
+        <p class="experience-card__description">Uma expedição de pesca completa no Rio Paru, com toda a estrutura para uma aventura inesquecível.</p>
+        <div class="experience-card__footer">
+          <div class="experience-card__price">
+            <p>A partir de</p><strong>R$ 6.900,00</strong>
+          </div>
+          <div class="experience-card__buttons">
+            <a href="roteiros.html#rota-pesca" class="btn btn-secondary">Ver Detalhes</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 4: Iratapuru Vivo -->
+    <article class="experience-card">
+      <a href="roteiros.html#rota-iratapuru-vivo" class="experience-card__image-link">
+        <img src="img/ira.jpg" alt="Reserva do Iratapuru ao entardecer" class="experience-card__image">
+      </a>
+      <div class="experience-card__content">
+        <div class="experience-card__location">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"></path></svg>
+          <span>Reserva do Iratapuru, AP</span>
+        </div>
+        <h3 class="experience-card__title"><a href="roteiros.html#rota-iratapuru-vivo">Iratapuru Vivo – Floresta, Rio e Saberes</a></h3>
+        <div class="experience-card__tags">
+          <span class="tag">🌿 Natureza</span><span class="tag">🥁 Cultura</span><span class="tag">🎣 Pesca</span><span class="tag">🏞️ Aventura</span>
+        </div>
+        <p class="experience-card__description">Uma imersão profunda na Reserva do Iratapuru, combinando trilhas, cultura local e a beleza do rio em uma experiência de ecoturismo autêntica.</p>
+        <div class="experience-card__footer">
+          <div class="experience-card__price"><p>A partir de</p><strong>R$ 1.050,00</strong></div>
+          <div class="experience-card__buttons"><a href="roteiros.html#rota-iratapuru-vivo" class="btn btn-secondary">Ver Detalhes</a></div>
+        </div>
+      </div>
+    </article>
   </div>
-
   <div style="text-align: center; margin-top: 40px;">
     <a href="roteiros.html" class="btn">Ver Roteiros Detalhados</a>
   </div>
@@ -161,7 +264,7 @@
 <div id="lightbox" class="lightbox">
   <div class="lightbox-wrapper">
     <img id="img-lightbox" alt="Imagem ampliada">
-    <img src="img/logo.png.png" class="lightbox-logo" alt="Vale Trip Jari">
+    <img src="img/logo_branca.png" class="lightbox-logo" alt="Vale Trip Jari">
   </div>
   <span class="lightbox-btn prev-btn">&#10094;</span>
   <span class="lightbox-btn next-btn">&#10095;</span>
@@ -173,6 +276,93 @@
   💬
 </a>
 
+<!-- PACOTES TURISTICOS -->
+<section class="pacotes-turisticos" id="pacotes-turisticos">
+  <h2>Nossos Pacotes Turísticos</h2>
+  <p class="secao-descricao">Escolha o plano ideal para sua aventura no Vale do Jari.</p>
+  <div class="pricing-cards-container">
+
+    <!-- Card Rota da Trilha -->
+    <div class="pricing-card pricing-card--verde">
+      <div class="pricing-card-header">
+        <h3>Rota da Trilha na Selva</h3>
+        <p class="pricing-card-price">R$ <span>899,00</span></p>
+        <p class="pricing-card-desc">Aventura guiada pela floresta, explorando a biodiversidade e os sons da mata nativa.</p>
+      </div>
+      <ul class="pricing-card-features">
+        <li>🥾 Trilha guiada</li>
+        <li>🌿 Contato com a natureza</li>
+        <li>🐒 Observação de fauna</li>
+        <li>Guia local experiente</li>
+        <li>Café da manhã e almoço inclusos</li>
+      </ul>
+      <a href="roteiros.html#rota-trilha" class="btn btn-secondary">Ver Detalhes</a>
+    </div>
+
+    <!-- Card Rota da Cachoeira -->
+    <div class="pricing-card pricing-card--laranja">
+      <span class="badge-popular">Mais Popular</span>
+      <div class="pricing-card-header">
+        <h3>Rota da Cachoeira</h3>
+        <p class="pricing-card-price">R$ <span>1.199,99</span></p>
+        <p class="pricing-card-desc">Uma imersão na cultura local com um banho revigorante nas quedas da Cachoeira de Santo Antônio.</p>
+      </div>
+      <ul class="pricing-card-features">
+        <li>💧 Banho na Cachoeira de Santo Antônio</li>
+        <li>🍽 Almoço regional autêntico</li>
+        <li>🛶 Passeio de barco</li>
+        <li>Visita à comunidade local</li>
+        <li>Segurança com bombeiros</li>
+      </ul>
+      <a href="roteiros.html#rota-cachoeira" class="btn">Ver Detalhes</a>
+    </div>
+
+    <!-- Card Iratapuru Vivo -->
+    <div class="pricing-card pricing-card--azul">
+      <div class="pricing-card-header">
+        <h3>Iratapuru Vivo</h3>
+        <p class="pricing-card-price">R$ <span>1.050,00</span></p>
+        <p class="pricing-card-desc">Imersão na Reserva do Iratapuru. O valor é referente ao roteiro de 2 dias.</p>
+      </div>
+      <ul class="pricing-card-features">
+        <li>🌿 Ecoturismo de base comunitária</li>
+        <li>🌰 Cultura da Castanha-do-Brasil</li>
+        <li>🛶 Passeio de barco</li>
+        <li>Hospedagem e alimentação inclusas</li>
+        <li>Guias e condutores locais</li>
+      </ul>
+      <a href="roteiros.html#rota-iratapuru-vivo" class="btn btn-secondary">Ver Detalhes</a>
+    </div>
+
+    <!-- Card Operação de Pesca -->
+    <div class="pricing-card pricing-card--marrom">
+      <div class="pricing-card-header">
+        <h3>Operação de Pesca</h3>
+        <p class="pricing-card-price">R$ <span>6.900,00</span></p>
+        <p class="pricing-card-desc">Uma expedição de pesca completa no Rio Paru, com toda a estrutura para uma aventura inesquecível.</p>
+      </div>
+      <ul class="pricing-card-features">
+        <li>🎣 6 dias de pesca esportiva</li>
+        <li>🏕️ Acampamento com estrutura completa</li>
+        <li>🏞️ Aventura no selvagem Rio Paru</li>
+        <li>Guias experientes</li>
+        <li>Tudo incluso (refeições, barco, etc)</li>
+      </ul>
+      <a href="roteiros.html#rota-pesca" class="btn btn-secondary">Ver Detalhes</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PERSONALIZAR ROTEIRO / CTA CONTATO -->
+<section style="background: var(--fundo); padding: 60px 20px;">
+  <div class="personalizar-roteiro">
+    <h3>Ficou com alguma dúvida ou quer montar sua viagem?</h3>
+    <p>Nossa equipe está pronta para ajudar a planejar uma experiência inesquecível na Amazônia. Entre em contato e vamos conversar!</p>
+    <a href="contato.html" class="btn">Fale Conosco</a>
+  </div>
+</section>
+
 <!-- SERVIÇOS -->
 <section class="servicos">
   <h2>Por Que Escolher Nossa Empresa?</h2>
@@ -180,19 +370,25 @@
   <div class="cards">
 
     <div class="card">
-      <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <div class="servico-icon-wrapper icon-verde">
+        <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      </div>
       <h3>Guias Locais</h3>
       <p>Experiência autêntica com quem conhece a região.</p>
     </div>
 
     <div class="card">
-      <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <div class="servico-icon-wrapper icon-laranja">
+        <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      </div>
       <h3>Segurança</h3>
       <p>Organização e cuidado em todos os passeios.</p>
     </div>
 
     <div class="card">
-      <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      <div class="servico-icon-wrapper icon-azul">
+        <svg class="servico-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+      </div>
       <h3>Experiência Completa</h3>
       <p>Do transporte à aventura, tudo pensado pra você.</p>
     </div>
@@ -200,71 +396,66 @@
   </div>
 </section>
 
-<!-- CONTATO -->
-<section class="contato" id="contato">
-  <div class="contato-container">
-    <h2>Fale Conosco</h2>
-    <p>Pronto para sua próxima aventura? Clique no botão abaixo para ver todas as formas de contato ou para nos enviar uma mensagem.</p>
-
-    <div class="contato-cta">
-      <a href="contato.html" class="btn">Entrar em Contato</a>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-container">
-
-    <div class="footer-col footer-links">
-      <h4>Links rápidos</h4>
+    <!-- Coluna 1: Links Rápidos + Logo -->
+    <div class="footer-col">
+      <h4>Links Rápidos</h4>
       <ul>
-        <li><a href="index.html#inicio">Início</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="faq.html">FAQ</a></li>
         <li><a href="roteiros.html">Destinos</a></li>
+        <li><a href="index.html#pacotes-turisticos">Pacotes</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </div>
 
+    <!-- Coluna 2: Destinos Populares -->
+    <div class="footer-col">
+      <h4>Destinos Populares</h4>
+      <ul>
+        <li><a href="roteiros.html#santo-antonio">Cachoeira de Santo Antônio</a></li>
+        <li><a href="roteiros.html#rota-trilha">Trilha da Floresta Tropical</a></li>
+        <li><a href="roteiros.html#padaria">Comunidade de Padaria</a></li>
+        <li><a href="roteiros.html#quilombo">Quilombo São José</a></li>
+        <li><a href="roteiros.html#comunidades">Comunidades</a></li>
+      </ul>
+    </div>
+
+    <!-- Coluna 3: Contato -->
     <div class="footer-col footer-contact">
       <h4>Contato</h4>
       <ul>
         <li class="contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span> Laranjal do Jari - AP</span>
+          <span class="icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <a href="https://www.google.com/maps/place/Laranjal+do+Jari+-+AP" target="_blank" rel="noopener noreferrer">Laranjal do Jari - AP</a>
         </li>
         <li class="contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 15.46a2 2 0 0 1-2.18.54 11.36 11.36 0 0 1-5.21-3.38 11.36 11.36 0 0 1-3.38-5.21A2 2 0 0 1 11 5h2a2 2 0 0 1 2 1.72c.07.89.3 1.76.65 2.56a2 2 0 0 1-.45 2.12L14 12.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <a href="https://wa.me/5596991152676" target="_blank">(96) 99115-2676</a>
+          <span class="icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <a href="tel:+5596991152676">(96) 99115-2676</a>
         </li>
         <li class="contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 8.5V18a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 6.5l-9 6-9-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
+          <span class="icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
           <a href="mailto:valetripjari@gmail.com">valetripjari@gmail.com</a>
         </li>
-        <li class="contact-item">
-          <span class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" stroke-width="1.4"/><path d="M16 11.37A4 4 0 1 1 12.63 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <a href="https://instagram.com/valetripjari" target="_blank">@valetripjari</a>
-        </li>
       </ul>
+      <div class="footer-social-icons">
+        <a href="https://instagram.com/valetripjari" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c2.71 0 3.05.01 4.12.06 1.07.05 1.75.22 2.22.41.6.25 1.09.58 1.59 1.08.5.5.83.99 1.08 1.59.19.47.36 1.15.41 2.22.05 1.07.06 1.41.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.75-.41 2.22-.25.6-.58 1.09-1.08 1.59-.5.5-.99.83-1.59 1.08-.47.19-1.15.36-2.22.41-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.75-.22-2.22-.41-.6-.25-1.09-.58-1.59-1.08-.5-.5-.83-.99-1.08-1.59-.19-.47-.36-1.15-.41-2.22-.05-1.07-.06-1.41-.06-4.12s.01-3.05.06-4.12c.05-1.07.22-1.75.41 2.22.25.6.58 1.09 1.08 1.59.5.5.99.83 1.59 1.08.47.19 1.15.36 2.22.41C8.95 2.01 9.29 2 12 2zm0 2c-2.67 0-3 .01-4.04.06-1.02.05-1.4.21-1.73.35-.45.15-.78.34-1.09.65-.31.31-.5.64-.65 1.09-.14.33-.3.71-.35 1.73-.05 1.04-.06 1.37-.06 4.04s.01 3 .06 4.04c.05 1.02.21 1.4.35 1.73.15.45.34.78.65 1.09.31.31.64.5 1.09.65.33.14.71.3 1.73.35 1.04.05 1.37.06 4.04.06s3-.01 4.04-.06c1.02-.05 1.4-.21 1.73-.35.45-.15.78-.34 1.09-.65.31-.31-.5-.64.65-1.09.14-.33.3-.71.35-1.73.05-1.04.06-1.37.06-4.04s-.01-3-.06-4.04c-.05-1.02-.21-1.4-.35-1.73-.15-.45-.34-.78-.65-1.09-.31-.31-.64-.5-1.09-.65-.33-.14-.71-.3-1.73-.35C15 4.01 14.67 4 12 4zm0 3.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 2a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm6.5-2.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></a>
+        <a href="https://tiktok.com/@valetripjari.ag" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16.6 5.82s.51.5 1.24 1.2c.78.74 1.73 1.28 2.9 1.46v3.28c-1.42-.2-2.69-.8-3.68-1.73v6.52a4.48 4.48 0 1 1-4.48-4.48v3.28a1.2 1.2 0 1 0 1.2 1.2V5.82h3.28z"/></svg></a>
+        <a href="mailto:valetripjari@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></a>
+        <a href="https://wa.me/5596991152676" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.58 1.34 5.14L2 22l5.25-1.4c1.5.83 3.2.13 4.94.13h.01c5.46 0 9.91-4.45 9.91-9.91C22 6.45 17.5 2 12.04 2zM17.23 14.25c-.2-.11-1.16-.57-1.34-.64-.18-.07-.32-.11-.45.11-.14.22-.51.64-.62.77-.12.13-.23.14-.43.05-.2-.1-1.03-.38-1.96-1.21-.72-.64-1.2-1.42-1.37-1.66-.17-.25-.02-.38.1-.51.11-.11.23-.28.35-.42.12-.14.16-.23.24-.39.08-.15.04-.28-.02-.39l-.45-1.08c-.18-.42-.35-.36-.48-.37h-.3c-.13 0-.32.05-.48.22-.17.18-.65.64-.65 1.57 0 .93.67 1.82.76 1.95.09.13 1.32 2.02 3.23 2.85.47.2.84.32 1.12.4.45.12 1.16.1 1.61-.19.5-.3.9-.86 1.03-1.66.12-.8-.04-1.47-.16-1.61-.12-.14-.28-.22-.43-.28z"/></svg></a>
+      </div>
     </div>
-
-    <div class="footer-col footer-about">
-      <h3>Vale Trip Jari</h3>
-      <p>Conectamos você às paisagens mais incríveis da Amazônia.<br>Experiências autênticas, seguras e memoráveis.</p>
-    </div>
-
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Vale Trip Jari • Todos os direitos reservados</p>
+    <p>© 2026 Vale Trip Jari. Todos os direitos reservados.</p>
+    <div class="footer-legal-links">
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
+      <a href="termos-de-uso.html">Termos de Uso</a>
+    </div>
   </div>
 </footer>
 
