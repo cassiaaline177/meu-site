@@ -2930,5 +2930,100 @@ nav a.nav-btn::before {
   .cookie-banner {
     padding: 15px;
   }
+/* ===================================================
+   FIX MENU MOBILE — cole no FINAL do seu style.css
+   (substitui o bloco anterior de menu mobile se houver)
+   =================================================== */
+
+@media (max-width: 768px) {
+
+  /* Garante que o botão hamburguer fique sempre clicável */
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 1002; /* Acima do overlay (1000) e do menu (1001) */
+    pointer-events: auto;
+  }
+
+  /* O overlay NÃO deve cobrir o botão de abrir */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Abaixo do menu e do botão */
+    backdrop-filter: blur(2px);
+  }
+
+  /* Menu lateral */
+  nav#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--verde-escuro);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 70px 30px 30px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex !important; /* Força display flex sempre */
+    z-index: 1001;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+  }
+
+  nav#menu.active {
+    transform: translateX(0);
+  }
+
+  /* Botão fechar (X) dentro do menu */
+  .close-menu-btn {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 2.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2;
+  }
+
+  .close-menu-btn:hover {
+    color: var(--laranja);
+  }
+
+  /* Links dentro do menu mobile */
+  nav#menu a {
+    color: white;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav#menu a.nav-btn {
+    background-color: var(--laranja);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-align: center;
+    border-bottom: none;
+    margin-top: 10px;
+  }
+
+  /* header-right precisa ter z-index alto */
+  .header-right {
+    position: relative;
+    z-index: 1002;
+  }
+}
 }
 }

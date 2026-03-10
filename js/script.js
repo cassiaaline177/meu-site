@@ -1,22 +1,72 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // ========== MENU MOBILE ==========
+ // ===================================================
+// FIX MENU MOBILE
+// Substitua o bloco "MENU MOBILE" no seu script.js
+// por este trecho completo
+// ===================================================
+
+document.addEventListener('DOMContentLoaded', function () {
+
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('menu');
-  const body = document.body;
   const closeMenuBtn = document.querySelector('.close-menu-btn');
+  const body = document.body;
 
-  if (menuToggle && menu) {
-    const closeMenu = () => {
-      menu.classList.remove('active');
-      body.classList.remove('menu-open');
-    };
+  if (!menuToggle || !menu) return;
 
-    menuToggle.addEventListener('click', function(e) {
+  function openMenu() {
+    menu.classList.add('active');
+    body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    menu.classList.remove('active');
+    body.classList.remove('menu-open');
+  }
+
+  // Abre ao clicar no hamburguer
+  menuToggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (menu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Fecha ao clicar no X
+  if (closeMenuBtn) {
+    closeMenuBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-      menu.classList.toggle('active');
-      body.classList.toggle('menu-open');
+      closeMenu();
     });
+  }
+
+  // Fecha ao clicar num link do menu
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Fecha ao clicar fora do menu (no overlay)
+  document.addEventListener('click', function (e) {
+    if (
+      menu.classList.contains('active') &&
+      !menu.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  // Fecha ao pressionar ESC
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+
+});
 
     // Lógica unificada para fechar o menu
     document.addEventListener('click', function(e) {
