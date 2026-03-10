@@ -18,20 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
       body.classList.toggle('menu-open');
     });
 
-    // Fechar menu ao clicar no botão 'X'
-    if (closeMenuBtn) {
-      closeMenuBtn.addEventListener('click', closeMenu);
-    }
-
-    // Fechar menu ao clicar em um link
-    document.querySelectorAll('nav a:not(.dropbtn)').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    // Fechar menu ao clicar fora
+    // Lógica unificada para fechar o menu
     document.addEventListener('click', function(e) {
-      // Verifica se o menu está ativo antes de tentar fechar
-      if (menu.classList.contains('active') && !e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+      // Só faz algo se o menu estiver ativo
+      if (!menu.classList.contains('active')) return;
+
+      // Não fecha se o clique foi no próprio botão de abrir/fechar
+      if (e.target.closest('.menu-toggle')) return;
+
+      // Fecha se o clique foi fora do menu, em um link, ou no botão de fechar
+      if (!e.target.closest('nav') || e.target.closest('nav a') || e.target.closest('.close-menu-btn')) {
         closeMenu();
       }
     });

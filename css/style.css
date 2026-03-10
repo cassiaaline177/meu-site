@@ -1909,15 +1909,16 @@ nav a.nav-btn::before {
   }
 
   .hero h1 {
-    font-size: 2.1rem;
-  }
-
-  .hero h1 {
     font-size: 2.5rem; /* Ajuste para telas menores */
   }
 
   .hero p {
     font-size: 1rem;
+  }
+
+  .destinos-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .popular-destinos {
@@ -1949,6 +1950,10 @@ nav a.nav-btn::before {
   }
 
   .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .communities-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1985,7 +1990,7 @@ nav a.nav-btn::before {
   }
 
   .roteiro-info-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .roteiro-col-aside .roteiro-info-grid {
@@ -2703,4 +2708,227 @@ nav a.nav-btn::before {
     width: 40px;
     height: 40px;
   }
+  /* ===================================================
+   CORREÇÕES MOBILE — cole no FINAL do seu style.css
+   =================================================== */
+
+/* ---------- HERO ---------- */
+/* background-attachment: fixed quebra no iOS/Safari */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll !important;
+    min-height: 60vh;
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ---------- DESTINOS POPULARES ---------- */
+/* Estava com grid-template-columns: repeat(3, 1fr) fixo */
+@media (max-width: 1024px) {
+  .destinos-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .destinos-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .destino-card {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ---------- EXPERIÊNCIAS (CARDS DE ROTAS) ---------- */
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .experience-card__image-link {
+    height: 200px;
+  }
+}
+
+/* ---------- COMUNIDADES GRID ---------- */
+@media (max-width: 600px) {
+  .communities-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ---------- ROTEIROS SECTION ---------- */
+@media (max-width: 768px) {
+  .roteiros-section {
+    padding: 50px 15px;
+  }
+
+  .roteiro-conteudo {
+    padding: 20px 15px;
+  }
+
+  .roteiro-principal .roteiro-card-img {
+    height: 200px;
+  }
+
+  .roteiro-info-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Sidebar vira coluna normal no mobile */
+  .roteiro-col-aside {
+    position: static !important;
+  }
+}
+
+/* ---------- PRICING CARDS ---------- */
+@media (max-width: 768px) {
+  .pricing-cards-container {
+    grid-template-columns: 1fr !important;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Remove o scale do card popular no mobile */
+  .pricing-card--laranja {
+    transform: scale(1) !important;
+  }
+
+  .pricing-card--laranja:hover {
+    transform: translateY(-5px) !important;
+  }
+}
+
+/* ---------- PACOTES / SEÇÕES GERAIS ---------- */
+@media (max-width: 768px) {
+  .popular-destinos,
+  .experiencias-section,
+  .pacotes-turisticos,
+  .servicos,
+  .galeria,
+  .sobre {
+    padding: 50px 15px;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .secao-descricao {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+}
+
+/* ---------- CARDS DE SERVIÇO ---------- */
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+/* ---------- GALERIA ---------- */
+@media (max-width: 480px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px;
+  }
+}
+
+/* ---------- PERSONALIZAR ROTEIRO ---------- */
+@media (max-width: 768px) {
+  .personalizar-roteiro {
+    padding: 35px 20px;
+    margin: 30px 15px;
+  }
+
+  .personalizar-roteiro h3 {
+    font-size: 1.4rem;
+  }
+
+  .personalizar-roteiro p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .footer-contact .contact-item {
+    justify-content: center;
+  }
+
+  .footer-social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* ---------- BOTÕES FLUTUANTES (WhatsApp + Voltar ao topo) ---------- */
+/* Evita sobreposição no mobile */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 15px;
+    font-size: 20px;
+    padding: 12px 14px;
+  }
+
+  #back-to-top {
+    bottom: 20px;
+    left: 15px;
+  }
+}
+
+/* ---------- COOKIE BANNER ---------- */
+@media (max-width: 768px) {
+  .cookie-banner {
+    padding: 15px;
+  }
+}
 }
