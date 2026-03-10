@@ -1,68 +1,92 @@
-document.addEventListener('DOMContentLoaded', function() {
-
- // ===================================================
-// FIX MENU MOBILE
-// Substitua o bloco "MENU MOBILE" no seu script.js
-// por este trecho completo
-// ===================================================
-
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ========== MENU MOBILE ==========
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('menu');
   const closeMenuBtn = document.querySelector('.close-menu-btn');
   const body = document.body;
 
-  if (!menuToggle || !menu) return;
+  if (menuToggle && menu) {
 
-  function openMenu() {
-    menu.classList.add('active');
-    body.classList.add('menu-open');
-  }
-
-  function closeMenu() {
-    menu.classList.remove('active');
-    body.classList.remove('menu-open');
-  }
-
-  // Abre ao clicar no hamburguer
-  menuToggle.addEventListener('click', function (e) {
-    e.stopPropagation();
-    if (menu.classList.contains('active')) {
-      closeMenu();
-    } else {
-      openMenu();
+    function openMenu() {
+      menu.classList.add('active');
+      body.classList.add('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
     }
-  });
 
-  // Fecha ao clicar no X
-  if (closeMenuBtn) {
-    closeMenuBtn.addEventListener('click', function (e) {
+    function closeMenu() {
+      menu.classList.remove('active');
+      body.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      // Fecha todos os dropdowns abertos
+      menu.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+    }
+
+    menuToggle.addEventListener('click', function (e) {
       e.stopPropagation();
-      closeMenu();
+      menu.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!menu.classList.contains('active')) return;
+      if (menuToggle.contains(e.target)) return;
+      if (!menu.contains(e.target) || e.target.closest('a') || e.target.closest('.close-menu-btn')) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('active')) {
+        closeMenu();
+      }
+    });
+
+    // Adiciona a "armadilha de foco" (Focus Trap)
+    menu.addEventListener('keydown', function(e) {
+      if (e.key !== 'Tab') return;
+
+      const focusableElements = menu.querySelectorAll('a[href], button:not([disabled])');
+      const firstFocusable = focusableElements[0];
+      const lastFocusable = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) { // Shift + Tab
+        if (document.activeElement === firstFocusable) {
+          lastFocusable.focus();
+          e.preventDefault();
+        }
+      } else { // Tab
+        if (document.activeElement === lastFocusable) {
+          firstFocusable.focus();
+          e.preventDefault();
+        }
+      }
+    });
+
+    // ========== DROPDOWN MOBILE TOGGLE ==========
+    // No mobile, o hover não funciona — usamos clique no .dropbtn para abrir/fechar
+    menu.querySelectorAll('.dropdown .dropbtn').forEach(function (dropbtn) {
+      dropbtn.addEventListener('click', function (e) {
+        // Só aplica o toggle se estiver em modo mobile
+        if (window.innerWidth <= 768) { // Ação para mobile
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const parentDropdown = this.closest('.dropdown');
+        const isOpen = parentDropdown.classList.contains('open');
+
+        // Fecha todos os outros dropdowns abertos
+        menu.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+
+        // Abre o atual (se não estava aberto) e atualiza o ARIA
+        if (!isOpen) {
+          parentDropdown.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+        } // Fim da condição mobile
+      });
     });
   }
-
-
-  // Fecha ao clicar fora do menu (no overlay)
-  document.addEventListener('click', function (e) {
-    if (
-      menu.classList.contains('active') &&
-      !menu.contains(e.target) &&
-      !menuToggle.contains(e.target)
-    ) {
-      closeMenu();
-    }
-  });
-
-  // Fecha ao pressionar ESC
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && menu.classList.contains('active')) {
-      closeMenu();
-    }
-  });
-
-});
 
   // ========== LIGHTBOX ==========
   const lightbox = document.getElementById('lightbox');
@@ -71,14 +95,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeBtn = document.querySelector('.close-lightbox');
   const prevBtn = document.querySelector('.prev-btn');
   const nextBtn = document.querySelector('.next-btn');
-  
+
   let currentIndex = 0;
-  // Cria um array com todas as imagens da galeria para facilitar a navegação
   const images = Array.from(galeriaItems).map(item => item.querySelector('img'));
 
   if (lightbox && imgLightbox && galeriaItems.length > 0) {
-    
-    // Função para atualizar a imagem do lightbox baseada no índice
+
     const updateImage = (index) => {
       if (index >= 0 && index < images.length) {
         const img = images[index];
@@ -88,59 +110,41 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-    // Abrir lightbox ao clicar na imagem
     galeriaItems.forEach((item, index) => {
-      item.addEventListener('click', function() {
+      item.addEventListener('click', function () {
         updateImage(index);
         lightbox.classList.add('active');
       });
     });
 
-    // Navegação Próxima
     const showNext = (e) => {
       if (e) e.stopPropagation();
-      let newIndex = currentIndex + 1;
-      if (newIndex >= images.length) newIndex = 0; // Loop para o início
-      updateImage(newIndex);
+      updateImage(currentIndex + 1 >= images.length ? 0 : currentIndex + 1);
     };
 
-    // Navegação Anterior
     const showPrev = (e) => {
       if (e) e.stopPropagation();
-      let newIndex = currentIndex - 1;
-      if (newIndex < 0) newIndex = images.length - 1; // Loop para o final
-      updateImage(newIndex);
+      updateImage(currentIndex - 1 < 0 ? images.length - 1 : currentIndex - 1);
     };
 
-    // Event Listeners dos botões
     if (nextBtn) nextBtn.addEventListener('click', showNext);
     if (prevBtn) prevBtn.addEventListener('click', showPrev);
 
-    const closeLightbox = () => {
-      lightbox.classList.remove('active');
-    };
+    const closeLightbox = () => lightbox.classList.remove('active');
 
-    // Fechar ao clicar no fundo (não na imagem)
-    lightbox.addEventListener('click', function(e) {
-      // Fecha se clicar fora da imagem e fora dos botões de navegação
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
     });
 
-    // Navegação por teclado (ESC, Seta Esquerda, Seta Direita)
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (lightbox.classList.contains('active')) {
-        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'Escape')     closeLightbox();
         if (e.key === 'ArrowRight') showNext();
-        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowLeft')  showPrev();
       }
     });
 
-    // Fechar no botão X
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeLightbox);
-    }
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
   }
 
   // ========== GALLERY FILTER ==========
@@ -149,20 +153,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (filterButtons.length > 0 && galleryItems.length > 0) {
     filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Set active button state
+      button.addEventListener('click', function () {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         this.classList.add('active');
-
         const filterValue = this.getAttribute('data-filter');
-
         galleryItems.forEach(item => {
           const itemCategory = item.getAttribute('data-category');
-          if (filterValue === 'all' || filterValue === itemCategory) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
+          item.style.display = (filterValue === 'all' || filterValue === itemCategory) ? 'block' : 'none';
         });
       });
     });
@@ -170,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ========== SMOOTH SCROLL ==========
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href === '#' || !document.querySelector(href)) return;
       e.preventDefault();
@@ -186,58 +183,52 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.unobserve(entry.target);
       }
     });
-  }, {
-    threshold: 0.1 // Trigger when 10% of the element is visible
-  });
+  }, { threshold: 0.1 });
 
-  const animatedElements = document.querySelectorAll('.sobre-texto, .sobre-img, .roteiros-section h2, .secao-descricao, .roteiro-card');
-  animatedElements.forEach((el) => observer.observe(el));
+  document.querySelectorAll('.sobre-texto, .sobre-img, .roteiros-section h2, .secao-descricao, .roteiro-card')
+    .forEach((el) => observer.observe(el));
 
   // ========== FORMULÁRIO DE CONTATO (AJAX) ==========
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      
+
       const btn = this.querySelector('button[type="submit"]');
       const originalText = btn.innerText;
-      
+
       btn.innerText = 'Enviando...';
       btn.disabled = true;
       btn.style.opacity = '0.7';
 
-      const formData = new FormData(this);
-
       fetch(this.action, {
         method: 'POST',
-        body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
       })
-      .then(response => {
-        if (response.ok) {
-          const formContainer = document.querySelector('.contato-form-col');
-          formContainer.innerHTML = `
-            <div style="text-align: center; padding: 30px 20px;">
-              <div style="font-size: 4rem; margin-bottom: 15px;">✅</div>
-              <h3 style="color: var(--azul); margin-bottom: 10px;">Mensagem Enviada com Sucesso!</h3>
-              <p style="color: var(--text-color); font-size: 1.1rem;">Agradecemos seu contato. Em breve retornaremos!</p>
-            </div>
-          `;
-        } else {
+        .then(response => {
+          if (response.ok) {
+            const formContainer = document.querySelector('.contato-form-col');
+            formContainer.innerHTML = `
+              <div style="text-align: center; padding: 30px 20px;">
+                <div style="font-size: 4rem; margin-bottom: 15px;">✅</div>
+                <h3 style="color: var(--azul); margin-bottom: 10px;">Mensagem Enviada com Sucesso!</h3>
+                <p style="color: var(--text-color); font-size: 1.1rem;">Agradecemos seu contato. Em breve retornaremos!</p>
+              </div>
+            `;
+          } else {
+            alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+          }
+        })
+        .catch(error => {
+          console.error('Erro:', error);
           alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
-        }
-      })
-      .catch(error => {
-        console.error('Erro:', error);
-        alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
-      })
-      .finally(() => {
-        btn.innerText = originalText;
-        btn.disabled = false;
-        btn.style.opacity = '1';
-      });
+        })
+        .finally(() => {
+          btn.innerText = originalText;
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        });
     });
   }
 
@@ -248,8 +239,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnNext = document.getElementById('btnNext');
     const dotsContainer = document.getElementById('dotsContainer');
     const cards = document.querySelectorAll('.sponsor-card');
-    
-    let currentIndex = 0;
+
+    let carouselIndex = 0;
     const totalItems = cards.length;
     let autoPlayInterval;
 
@@ -263,71 +254,48 @@ document.addEventListener('DOMContentLoaded', function () {
       const visibleItems = getVisibleItems();
       const cardWidth = track.offsetWidth / visibleItems;
       const maxIndex = totalItems - visibleItems;
-      
-      if (currentIndex > maxIndex) currentIndex = 0;
-      if (currentIndex < 0) currentIndex = maxIndex;
 
-      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      updateDots(visibleItems);
+      if (carouselIndex > maxIndex) carouselIndex = 0;
+      if (carouselIndex < 0) carouselIndex = maxIndex;
+
+      track.style.transform = `translateX(-${carouselIndex * cardWidth}px)`;
+      updateDots();
     }
 
     function createDots() {
       dotsContainer.innerHTML = '';
       const visibleItems = getVisibleItems();
       const maxIndex = totalItems - visibleItems;
-      
+
       for (let i = 0; i <= maxIndex; i++) {
         const dot = document.createElement('button');
         dot.classList.add('dot');
-        if (i === currentIndex) dot.classList.add('active');
-        
+        if (i === carouselIndex) dot.classList.add('active');
         dot.addEventListener('click', () => {
-          currentIndex = i;
+          carouselIndex = i;
           updateCarousel();
           resetAutoPlay();
         });
-        
         dotsContainer.appendChild(dot);
       }
     }
 
     function updateDots() {
-      const dots = document.querySelectorAll('.dot');
-      dots.forEach((dot, index) => {
-        if (index === currentIndex) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
+      document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === carouselIndex);
       });
     }
 
-    function moveNext() {
-      currentIndex++;
-      updateCarousel();
-    }
-
-    function movePrev() {
-      currentIndex--;
-      updateCarousel();
-    }
+    function moveNext() { carouselIndex++; updateCarousel(); }
+    function movePrev() { carouselIndex--; updateCarousel(); }
 
     if (btnNext) btnNext.addEventListener('click', () => { moveNext(); resetAutoPlay(); });
     if (btnPrev) btnPrev.addEventListener('click', () => { movePrev(); resetAutoPlay(); });
 
-    function startAutoPlay() {
-      autoPlayInterval = setInterval(moveNext, 3000);
-    }
+    function startAutoPlay() { autoPlayInterval = setInterval(moveNext, 3000); }
+    function resetAutoPlay() { clearInterval(autoPlayInterval); startAutoPlay(); }
 
-    function resetAutoPlay() {
-      clearInterval(autoPlayInterval);
-      startAutoPlay();
-    }
-
-    window.addEventListener('resize', () => {
-      createDots();
-      updateCarousel();
-    });
+    window.addEventListener('resize', () => { createDots(); updateCarousel(); });
 
     createDots();
     startAutoPlay();
@@ -343,43 +311,30 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
       <button id="accept-cookies" class="btn">Aceitar</button>
     `;
-    
     document.body.appendChild(cookieBanner);
-    
-    // Delay para animação de entrada suave
-    setTimeout(() => {
-      cookieBanner.classList.add('show');
-    }, 1000);
+
+    setTimeout(() => cookieBanner.classList.add('show'), 1000);
 
     const acceptBtn = document.getElementById('accept-cookies');
     if (acceptBtn) {
       acceptBtn.addEventListener('click', () => {
         localStorage.setItem('cookieConsent', 'true');
         cookieBanner.classList.remove('show');
-        setTimeout(() => {
-          cookieBanner.remove();
-        }, 500); // Aguarda a transição CSS terminar antes de remover do DOM
+        setTimeout(() => cookieBanner.remove(), 500);
       });
     }
   }
 
   // ========== BACK TO TOP BUTTON ==========
   const backToTopBtn = document.getElementById('back-to-top');
-
   if (backToTopBtn) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
+      backToTopBtn.classList.toggle('show', window.scrollY > 300);
     });
 
     backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
 });
